@@ -4,6 +4,15 @@ from collections import OrderedDict
 
 import torch
 import torch.nn as nn
+import numpy as np
+
+try:
+    from torch_geometric.nn import GATConv, global_mean_pool
+    from torch_geometric.data import Data, Batch
+    HAS_PYG = True
+except ImportError:
+    HAS_PYG = False
+    print("torch_geometric not found - GNN model unavailable")
 
 
 class PsPPO(nn.Module):
@@ -240,3 +249,186 @@ class PsPPO(nn.Module):
         else:
             print("Loading file failed. File not found.")
             return False
+
+
+# ============================================================
+# CONTRIBUTION 2: GNN-based Actor-Critic
+# Thay MLP encoder → GATConv để agents thấy nhau qua graph
+# Based on: Almasan (2022) GAT architecture
+# ============================================================
+
+class TreeObsToGraph:
+    """
+    Convert TreeObs flat array → PyG graph.
+    Mỗi node trong observation tree = 1 graph node.
+    """
+    N_FEATURES = 11  # features mỗi node trong TreeObs
+
+    def __call__(self, flat_obs):
+        if flat_obs is None:
+            return Data(
+                x=torch.zeros((1, self.N_FEATURES)),
+                edge_index=torch.zeros((2, 0), dtype=torch.long)
+            )
+
+        total_features = len(flat_obs)
+        n_nodes = max(1, total_features // self.N_FEATURES)
+        remainder = total_features % self.N_FEATURES
+
+        # Pad nếu cần để chia đều
+        if remainder != 0:
+            flat_obs = np.concatenate([
+                flat_obs,
+                np.zeros(self.N_FEATURES - remainder)
+            ])
+            n_nodes = len(flat_obs) // self.N_FEATURES
+
+        node_features = flat_obs[:n_nodes * self.N_FEATURES].reshape(n_nodes, self.N_FEATURES)
+        node_features = np.nan_to_num(node_features, nan=0.0, posinf=1.0, neginf=-1.0)
+
+        # Xây edges theo cấu trúc tree: parent ↔ child
+        edges_src, edges_dst = [], []
+        for i in range(1, n_nodes):
+            parent = (i - 1) // 4
+            edges_src.extend([parent, i])
+            edges_dst.extend([i, parent])
+
+        x = torch.FloatTensor(node_features)
+
+        if len(edges_src) > 0:
+            edge_index = torch.LongTensor([edges_src, edges_dst])
+        else:
+            edge_index = torch.zeros((2, 0), dtype=torch.long)
+
+        return Data(x=x, edge_index=edge_index)
+
+
+class GNNPsPPO(nn.Module):
+    """
+    GNN Actor-Critic cho PS-PPO.
+    Interface giống hệt PsPPO để không cần sửa policy.py.
+
+    train_params cần thêm:
+      - gnn_hidden_dim (default 128)
+      - gnn_heads      (default 4)
+      - gnn_layers     (default 2)
+    """
+
+    def __init__(self, state_size, action_size, masking_value, train_params):
+        super(GNNPsPPO, self).__init__()
+
+        assert HAS_PYG, "pip install torch-geometric trước khi dùng GNNPsPPO"
+
+        self.action_size = action_size
+        self.masking_value = masking_value
+        self.softmax = nn.Softmax(dim=-1)
+        self.evaluation_mode = train_params.evaluation_mode
+        self.is_recurrent = False
+        self.is_shared = True
+
+        node_feat_dim = 11
+        hidden_dim  = getattr(train_params, 'gnn_hidden_dim', 128)
+        n_heads     = getattr(train_params, 'gnn_heads', 4)
+        n_layers    = getattr(train_params, 'gnn_layers', 2)
+
+        # ── GAT Encoder (Almasan-style) ───────────────────────
+        self.gat_layers = nn.ModuleList()
+
+        # Layer đầu: node_feat_dim → hidden_dim
+        self.gat_layers.append(
+            GATConv(node_feat_dim, hidden_dim // n_heads,
+                    heads=n_heads, dropout=0.1, concat=True)
+        )
+        # Các layer tiếp theo: hidden_dim → hidden_dim
+        for _ in range(n_layers - 1):
+            self.gat_layers.append(
+                GATConv(hidden_dim, hidden_dim // n_heads,
+                        heads=n_heads, dropout=0.1, concat=True)
+            )
+
+        # ── Actor head ────────────────────────────────────────
+        self.fc_actor = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, action_size)
+        )
+
+        # ── Critic head ───────────────────────────────────────
+        self.fc_critic = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, 1)
+        )
+
+        # Graph converter
+        self.graph_converter = TreeObsToGraph()
+
+        # Load model nếu có
+        if "load_model_path" in train_params and train_params.load_model_path:
+            self.load(train_params.load_model_path)
+        if self.evaluation_mode:
+            import sys
+            sys.exit()
+
+    def _encode(self, state_batch):
+        """
+        Encode batch observations qua GNN.
+        state_batch: tensor [batch, state_size]
+        Returns: tensor [batch, hidden_dim]
+        """
+        graphs = []
+        for i in range(state_batch.shape[0]):
+            obs_np = state_batch[i].cpu().numpy()
+            graph  = self.graph_converter(obs_np)
+            graphs.append(graph)
+
+        batched    = Batch.from_data_list(graphs).to(state_batch.device)
+        x          = batched.x.float()
+        edge_index = batched.edge_index
+
+        # GNN message passing
+        for gat in self.gat_layers:
+            x = torch.relu(gat(x, edge_index))
+
+        # Global pooling → 1 embedding vector per agent
+        embedding = global_mean_pool(x, batched.batch)
+        return embedding
+
+    def act_forward(self, state, action_mask, hidden=None):
+        """Giống interface PsPPO.act_forward()"""
+        if state.dim() == 1:
+            state = state.unsqueeze(0)
+
+        embedding = self._encode(state)
+        logits    = self.fc_actor(embedding).squeeze(0)
+
+        # Action masking (Kool 2019)
+        if action_mask is not None:
+            logits = torch.where(action_mask, logits, self.masking_value)
+
+        return self.softmax(logits), None  # None = không có hidden state
+
+    def evaluate_forward(self, state, action_mask, hidden=None):
+        """Giống interface PsPPO.evaluate_forward()"""
+        embedding = self._encode(state)
+        logits    = self.fc_actor(embedding)
+        value     = self.fc_critic(embedding)
+
+        if action_mask is not None:
+            logits = torch.where(action_mask, logits, self.masking_value)
+
+        return self.softmax(logits), value
+
+    def save(self, path):
+        try:
+            torch.save(self.state_dict(), path)
+        except FileNotFoundError:
+            print("Could not save: path not found.")
+
+    def load(self, path):
+        import os
+        if os.path.exists(path):
+            self.load_state_dict(torch.load(path))
+            return True
+        print(f"Load failed: {path} not found.")
+        return False
