@@ -13,7 +13,7 @@ except ImportError as e:
 from flatland.envs.observations import TreeObsForRailEnv
 from flatland.envs.predictions import ShortestPathPredictorForRailEnv
 
-from src.common.action_skipping_masking import get_action_masking
+from src.common.action_skipping_masking import get_action_masking, get_enhanced_action_masking
 from src.common.flatland_railenv import FlatlandRailEnv
 from src.common.utils import Timer, TensorBoardLogger
 from src.psppo.policy import PsPPOPolicy
@@ -135,7 +135,7 @@ def train_multiple_agents(env_params, train_params):
             """
             for agent in prev_obs:
                 # Create action mask
-                action_mask = get_action_masking(env, agent, action_size, train_params)
+                action_mask = get_enhanced_action_masking(env, agent, action_size, train_params)
 
                 # Fill action dict
                 # If agent is moving between two cells or trapped in a deadlock for the first time in the episode
