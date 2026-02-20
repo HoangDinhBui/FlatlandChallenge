@@ -68,3 +68,70 @@ def get_action_masking(env, agent, action_size, train_params):
                     action_mask[action] = 0
 
     return action_mask
+
+# ============================================================
+# CONTRIBUTION 1: Enhanced 3-Level Action Masking
+# Mở rộng từ physical masking gốc
+# ============================================================
+
+def get_enhanced_action_masking(env, agent_handle, action_size, train_params):
+    """
+    3-level action masking cho railway safety:
+      Level 1: Physical constraints (dùng lại hàm gốc)
+      Level 2: Collision avoidance (MỚI)
+      Level 3: Deadlock prevention fallback (MỚI)
+    """
+    from flatland.core.grid.grid4_utils import get_new_position
+    from flatland.envs.rail_env import RailEnvActions
+
+    rail_env = env.get_rail_env()
+    agent = rail_env.agents[agent_handle]
+
+    # Level 1: dùng lại hàm gốc
+    action_mask = get_action_masking(env, agent_handle, action_size, train_params)
+
+    # Nếu không bật masking hoặc agent chưa vào bản đồ thì trả về luôn
+    if not train_params.action_masking or agent.position is None:
+        return action_mask
+
+    # Level 2: Collision Avoidance
+    # Lấy tập vị trí của tất cả agents khác đang active
+    other_positions = set()
+    for i, other in enumerate(rail_env.agents):
+        if i != agent_handle and other.position is not None:
+            other_positions.add(other.position)
+
+    for action in range(action_size):
+        if action_mask[action] == 0:
+            continue
+        if action in [RailEnvActions.DO_NOTHING, RailEnvActions.STOP_MOVING]:
+            continue
+
+        # Tính hướng mới
+        direction = agent.direction
+        if action == RailEnvActions.MOVE_LEFT:
+            new_direction = (direction - 1) % 4
+        elif action == RailEnvActions.MOVE_FORWARD:
+            new_direction = direction
+        elif action == RailEnvActions.MOVE_RIGHT:
+            new_direction = (direction + 1) % 4
+        else:
+            continue
+
+        next_pos = get_new_position(agent.position, new_direction)
+
+        if next_pos in other_positions:
+            action_mask[action] = 0  # Block collision
+
+    # Level 3: Deadlock Prevention
+    # Nếu tất cả move actions đều bị block → cho phép DO_NOTHING
+    move_actions = [
+        RailEnvActions.MOVE_LEFT,
+        RailEnvActions.MOVE_FORWARD,
+        RailEnvActions.MOVE_RIGHT
+    ]
+    all_moves_blocked = all(action_mask[a] == 0 for a in move_actions)
+    if all_moves_blocked:
+        action_mask[RailEnvActions.DO_NOTHING] = 1
+
+    return action_mask
