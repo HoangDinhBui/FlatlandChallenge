@@ -128,7 +128,13 @@ def train():
         # Action Masking / Skipping
         # ============================
         "action_masking": True,
-        "allow_no_op": False
+        "allow_no_op": False,
+
+        # Contribution 2: GNN settings
+        "train_params.use_gnn": True,          # True = dùng GNN, False = dùng MLP gốc
+        "train_params.gnn_hidden_dim": 128,    # Hidden dimension của GAT
+        "train_params.gnn_heads": 4,           # Số attention heads
+        "train_params.gnn_layers": 2,          # Số GAT layers
     }
 
     """
