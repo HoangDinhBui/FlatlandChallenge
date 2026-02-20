@@ -4,7 +4,7 @@ from torch.distributions import Categorical
 
 from src.common.policy import Policy
 from src.psppo.memory import Memory
-from src.psppo.model import PsPPO
+from src.psppo.model import PsPPO, GNNPsPPO
 
 
 class PsPPOPolicy(Policy):
@@ -48,11 +48,12 @@ class PsPPOPolicy(Policy):
         else:
             raise Exception("Advantage estimator not available")
 
+        ModelClass = GNNPsPPO if getattr(train_params, 'use_gnn', False) else PsPPO
         # The policy updated at each learning epoch
-        self.policy = PsPPO(state_size,
-                            action_size,
-                            torch.tensor(-1e+8).to(self.device),
-                            train_params).to(self.device)
+        self.policy = ModelClass(state_size,
+                         action_size,
+                         torch.tensor(-1e+8).to(self.device),
+                         train_params).to(self.device)
 
         self.is_recurrent = train_params.shared_recurrent
 
@@ -66,10 +67,10 @@ class PsPPOPolicy(Policy):
 
         # The policy updated at the end of the training epochs where is used as the old policy.
         # It is used also to obtain trajectories.
-        self.policy_old = PsPPO(state_size,
-                                action_size,
-                                torch.tensor(-1e+8).to(self.device),
-                                train_params).to(self.device)
+        self.policy_old = ModelClass(state_size,
+                             action_size,
+                             torch.tensor(-1e+8).to(self.device),
+                             train_params).to(self.device)
         self.policy_old.load_state_dict(self.policy.state_dict())
 
     def _get_advs(self, rewards, dones, state_estimated_value):
