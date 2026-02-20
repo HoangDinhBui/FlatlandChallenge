@@ -53,18 +53,39 @@ def get_action_masking(env, agent, action_size, train_params):
 
     # Mask filling
     if train_params.action_masking:
-        for action in range(action_size):
-            """
-            Control if the agent is in the scene has a position, excluding when it has been arrived and removed
-            and when has not already started. In these cases the action masks is the initial one.
-            """
-            if env.get_rail_env().agents[agent].position is not None:
+        rail_env = env.get_rail_env()
+        agent_obj = rail_env.agents[agent]
 
-                _, cell_valid, _, _, transition_valid = env.get_rail_env()._check_action_on_agent(
-                    RailEnvActions(action),
-                    env.get_rail_env().agents[agent])
+        if agent_obj.position is not None:
+            pos = agent_obj.position
+            direction = agent_obj.direction
 
-                if not all([cell_valid, transition_valid]):
+            for action in range(action_size):
+                if action in [RailEnvActions.DO_NOTHING, RailEnvActions.STOP_MOVING]:
+                    continue
+
+                # Tính hướng mới
+                if action == RailEnvActions.MOVE_LEFT:
+                    new_dir = (direction - 1) % 4
+                elif action == RailEnvActions.MOVE_FORWARD:
+                    new_dir = direction
+                elif action == RailEnvActions.MOVE_RIGHT:
+                    new_dir = (direction + 1) % 4
+                else:
+                    continue
+
+                # Kiểm tra transition hợp lệ
+                transitions = rail_env.rail.get_transitions(*pos, direction)
+                if transitions[new_dir] == 0:
+                    action_mask[action] = 0
+                    continue
+
+                # Tính vị trí tiếp theo
+                next_pos = get_new_position(pos, new_dir)
+                r, c = next_pos
+
+                # Out of bounds
+                if not (0 <= r < rail_env.height and 0 <= c < rail_env.width):
                     action_mask[action] = 0
 
     return action_mask

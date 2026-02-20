@@ -1,5 +1,5 @@
 import numpy as np
-from flatland.envs.agent_utils import RailAgentStatus
+from flatland.envs.step_utils.states import TrainState as RailAgentStatus
 
 from flatland.envs.observations import TreeObsForRailEnv
 
@@ -28,11 +28,11 @@ class NormalizeObservations:
 
     def _get_custom_observations(self, env, handle, agent_obs, deadlock):
         agent = env.agents[handle]
-        if agent.status == RailAgentStatus.READY_TO_DEPART:
+        if agent.state == RailAgentStatus.WAITING:
             agent_virtual_position = agent.initial_position
-        elif agent.status == RailAgentStatus.ACTIVE:
+        elif agent.state == RailAgentStatus.MOVING:
             agent_virtual_position = agent.position
-        elif agent.status == RailAgentStatus.DONE:
+        elif agent.state == RailAgentStatus.DONE:
             agent_virtual_position = agent.target
         else:
             return None
@@ -49,7 +49,7 @@ class NormalizeObservations:
             other_agent = env.agents[i]
 
             # ignore other agents not in the grid any more
-            if other_agent.status == RailAgentStatus.DONE_REMOVED:
+            if other_agent.state == RailAgentStatus.DONE:
                 continue
 
             obs_targets[other_agent.target][1] = 1
@@ -62,7 +62,7 @@ class NormalizeObservations:
                 obs_agents_state[other_agent.position][2] = other_agent.malfunction_data['malfunction']
                 obs_agents_state[other_agent.position][3] = other_agent.speed_data['speed']
             # fifth channel: all ready to depart on this position
-            if other_agent.status == RailAgentStatus.READY_TO_DEPART:
+            if other_agent.state == RailAgentStatus.WAITING:
                 obs_agents_state[other_agent.initial_position][4] += 1
 
         agent_obs = np.append(agent_obs, np.clip(obs_targets, 0, 1))

@@ -24,7 +24,7 @@ def get_agent_ids(agents, malfunction_rate):
     max_malfunction_rate = 0.1 * 10
     max_value = max_speed + max_malfunction_rate
 
-    return {a.handle: (a.speed_data["speed"] + malfunction_rate * 10) / max_value for a in agents}
+    return {a.handle: (a.speed_counter.speed + malfunction_rate * 10) / max_value for a in agents}
 
 
 def train_multiple_agents(env_params, train_params):

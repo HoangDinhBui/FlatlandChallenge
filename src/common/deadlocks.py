@@ -1,4 +1,4 @@
-from flatland.envs.agent_utils import RailAgentStatus
+from flatland.envs.step_utils.states import TrainState as RailAgentStatus
 
 
 class DeadlocksDetector:
@@ -37,8 +37,8 @@ class DeadlocksDetector:
         """
         agents = []
         for a in range(env.get_num_agents()):
-            if env.agents[a].status not in [RailAgentStatus.DONE_REMOVED,
-                                            RailAgentStatus.READY_TO_DEPART,
+            if env.agents[a].state not in [RailAgentStatus.DONE,
+                                            RailAgentStatus.WAITING,
                                             RailAgentStatus.DONE]:
                 agents.append(a)
                 if not self.deadlocks[a]:
@@ -62,10 +62,9 @@ class DeadlocksDetector:
         for direction, values in enumerate(self.directions):
             if transitions[direction] == 1:
                 position_check = (pos_a1[0] + values[0], pos_a1[1] + values[1])
-                if not (env.cell_free(position_check)):
-                    for a2 in range(env.get_num_agents()):
-                        if env.agents[a2].position == position_check:
-                            return a2
+                for a2 in range(env.get_num_agents()):
+                    if env.agents[a2].position == position_check:
+                        return a2
 
         return None
 
@@ -80,12 +79,14 @@ class DeadlocksDetector:
         pos_a1 = env.agents[a1].position
         dir_a1 = env.agents[a1].direction
 
+        if pos_a1 is None:
+            return None
+
         if env.rail.get_transitions(pos_a1[0], pos_a1[1], dir_a1)[dir_a1] == 1:
             position_check = (pos_a1[0] + self.directions[dir_a1][0], pos_a1[1] + self.directions[dir_a1][1])
-            if not (env.cell_free(position_check)):
-                for a2 in range(env.get_num_agents()):
-                    if env.agents[a2].position == position_check:
-                        return a2
+            for a2 in range(env.get_num_agents()):
+                if env.agents[a2].position == position_check:
+                    return a2
         else:
             return self._check_feasible_transitions(pos_a1, env.rail.get_transitions(pos_a1[0], pos_a1[1], dir_a1), env)
 

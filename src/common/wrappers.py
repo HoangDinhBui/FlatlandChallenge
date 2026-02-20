@@ -4,7 +4,7 @@ import gym
 import numpy as np
 from flatland.core.grid.grid4_utils import get_new_position
 
-from flatland.envs.agent_utils import RailAgentStatus
+from flatland.envs.step_utils.states import TrainState as RailAgentStatus
 from flatland.envs.rail_env import RailEnvActions
 
 
@@ -74,7 +74,7 @@ class StatsWrapper(gym.Wrapper):
         """
 
         self.normalized_score = self.score / (self.max_steps * self.num_agents)
-        self.tasks_finished = sum(info["status"][a] in [RailAgentStatus.DONE, RailAgentStatus.DONE_REMOVED]
+        self.tasks_finished = sum(info["status"][a] in [RailAgentStatus.DONE, RailAgentStatus.DONE]
                                   for a in range(self.num_agents))
         self.completion_percentage = self.tasks_finished / max(1, self.num_agents)
         self.deadlocks_percentage = sum(
@@ -216,7 +216,7 @@ class RewardsWrapper(gym.Wrapper):
         """
         rewards = {}
         for agent in range(self.unwrapped.rail_env.get_num_agents()):
-            if self.unwrapped.rail_env.agents[agent].status == RailAgentStatus.ACTIVE:
+            if self.unwrapped.rail_env.agents[agent].state == RailAgentStatus.MOVING:
                 _, cell_valid, _, _, transition_valid = self.unwrapped.rail_env._check_action_on_agent(
                     RailEnvActions(action_dict[agent] if agent in action_dict else 0),
                     self.unwrapped.rail_env.agents[agent])

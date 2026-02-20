@@ -3,7 +3,7 @@ import gym
 from flatland.envs.malfunction_generators import malfunction_from_params
 from flatland.envs.rail_env import RailEnv
 from flatland.envs.rail_generators import sparse_rail_generator
-from flatland.envs.schedule_generators import sparse_schedule_generator
+from flatland.envs.line_generators import sparse_line_generator
 from flatland.utils.rendertools import RenderTool
 
 from src.common.deadlocks import DeadlocksDetector
@@ -50,10 +50,10 @@ class FlatlandRailEnv:
                 max_num_cities=env_params.n_cities,
                 grid_mode=False,
                 max_rails_between_cities=env_params.max_rails_between_cities,
-                max_rails_in_city=env_params.max_rails_in_city,
+                max_rail_pairs_in_city=env_params.max_rails_in_city,
                 seed=env_params.seed
             ),
-            schedule_generator=sparse_schedule_generator(env_params.speed_profiles),
+            line_generator=sparse_line_generator(),
             number_of_agents=env_params.n_agents,
             malfunction_generator_and_process_data=malfunction_from_params(env_params.malfunction_parameters),
             obs_builder_object=observation,
