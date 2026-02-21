@@ -166,14 +166,14 @@ class PsPPOPolicy(Policy):
                     log_of_action_prob, state_estimated_value, dist_entropy = \
                         policy_evaluate(
                             torch.cat((old_states[batch_start:batch_end], torch.unsqueeze(last_state, 0))),
-                            old_hidden[batch_start] if is_recurrent else None,
+                            old_hidden[batch_start] if (is_recurrent and len(old_hidden) > batch_start) else None,
                             torch.cat((old_actions[batch_start:batch_end], torch.unsqueeze(last_action, 0))),
                             torch.cat((old_masks[batch_start:batch_end], torch.unsqueeze(last_mask, 0))))
                 else:
                     # Evaluating old actions and values
                     log_of_action_prob, state_estimated_value, dist_entropy = \
                         policy_evaluate(old_states[batch_start:batch_end + 1],
-                                        old_hidden[batch_start] if is_recurrent else None,
+                                        old_hidden[batch_start] if (is_recurrent and len(old_hidden) > batch_start) else None,
                                         old_actions[batch_start:batch_end + 1],
                                         old_masks[batch_start:batch_end + 1])
 
