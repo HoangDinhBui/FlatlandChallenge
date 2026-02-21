@@ -74,7 +74,7 @@ class StatsWrapper(gym.Wrapper):
         """
 
         self.normalized_score = self.score / (self.max_steps * self.num_agents)
-        self.tasks_finished = sum(info["status"][a] in [RailAgentStatus.DONE, RailAgentStatus.DONE]
+        self.tasks_finished = sum(self.unwrapped.rail_env.agents[a].state == RailAgentStatus.DONE
                                   for a in range(self.num_agents))
         self.completion_percentage = self.tasks_finished / max(1, self.num_agents)
         self.deadlocks_percentage = sum(
