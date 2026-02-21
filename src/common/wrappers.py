@@ -210,20 +210,32 @@ class RewardsWrapper(gym.Wrapper):
 
     def _check_invalid_transitions(self, action_dict):
         """
-
         :param action_dict: dictionary containing for each agent the decided action
         :return: the penalties based on attempted invalid transitions
         """
         rewards = {}
-        for agent in range(self.unwrapped.rail_env.get_num_agents()):
-            if self.unwrapped.rail_env.agents[agent].state == RailAgentStatus.MOVING:
-                _, cell_valid, _, _, transition_valid = self.unwrapped.rail_env._check_action_on_agent(
-                    RailEnvActions(action_dict[agent] if agent in action_dict else 0),
-                    self.unwrapped.rail_env.agents[agent])
-                if not all([cell_valid, transition_valid]):
-                    rewards[agent] = self.invalid_action_penalty
-                else:
-                    rewards[agent] = 0.0
+        rail_env = self.unwrapped.rail_env
+
+        for agent in range(rail_env.get_num_agents()):
+            agent_obj = rail_env.agents[agent]
+
+            if agent_obj.state == RailAgentStatus.MOVING:
+                pos = agent_obj.position
+                direction = agent_obj.direction
+                action = action_dict.get(agent, 0)
+
+                is_valid = True
+                if pos is not None and action not in [0, 4]:
+                    if action == 1:    new_dir = (direction - 1) % 4
+                    elif action == 2:  new_dir = direction
+                    elif action == 3:  new_dir = (direction + 1) % 4
+                    else:              new_dir = direction
+
+                    transitions = rail_env.rail.get_transitions(*pos, direction)
+                    if transitions[new_dir] == 0:
+                        is_valid = False
+
+                rewards[agent] = self.invalid_action_penalty if not is_valid else 0.0
             else:
                 rewards[agent] = 0.0
 
