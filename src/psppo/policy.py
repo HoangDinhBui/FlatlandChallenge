@@ -135,7 +135,7 @@ class PsPPOPolicy(Policy):
 
         with torch.no_grad():
             _, state_estimated_value, _ = policy_evaluate(torch.cat((old_states, torch.unsqueeze(last_state, 0))),
-                                                          old_hidden[0] if is_recurrent else None,
+                                                          old_hidden[0] if (is_recurrent and len(old_hidden) > 0) else None,
                                                           torch.cat((old_actions, torch.unsqueeze(last_action, 0))),
                                                           torch.cat((old_masks, torch.unsqueeze(last_mask, 0))))
 
