@@ -12,6 +12,7 @@ except ImportError as e:
 
 from flatland.envs.observations import TreeObsForRailEnv
 from flatland.envs.predictions import ShortestPathPredictorForRailEnv
+from flatland.envs.rail_env import RailEnvActions
 
 from src.common.action_skipping_masking import get_action_masking, get_enhanced_action_masking
 from src.common.flatland_railenv import FlatlandRailEnv
@@ -208,6 +209,34 @@ def train_multiple_agents(env_params, train_params):
                                                    "reset": reset_timer,
                                                    "learn": learn_timer,
                                                    "train": training_timer})
+            
+            # Log metrics to WandB
+            if use_wandb and ppo.are_stats_ready():
+                wandb.log({
+                    "episode": episode,
+                    "metrics/score": env.env.normalized_score,
+                    "metrics/accumulated_score": np.mean(env.env.accumulated_normalized_score),
+                    "metrics/completion": env.env.completion_percentage,
+                    "metrics/accumulated_completion": np.mean(env.env.accumulated_completion),
+                    "metrics/deadlocks": env.env.deadlocks_percentage,
+                    "metrics/accumulated_deadlocks": np.mean(env.env.accumulated_deadlocks),
+                    "training/policy_loss": ppo.get_stat("policy_loss"),
+                    "training/value_loss": ppo.get_stat("value_loss"),
+                    "training/entropy_loss": ppo.get_stat("entropy_loss"),
+                    "training/total_loss": ppo.get_stat("total_loss"),
+                    "training/probs_ratio": ppo.get_stat("probs_ratio"),
+                    "training/advantage": ppo.get_stat("advantage"),
+                    "training/state_estimated_value": ppo.get_stat("state_estimated_value"),
+                    "actions/do_nothing": env.env.action_probs[RailEnvActions.DO_NOTHING],
+                    "actions/move_left": env.env.action_probs[RailEnvActions.MOVE_LEFT],
+                    "actions/move_forward": env.env.action_probs[RailEnvActions.MOVE_FORWARD],
+                    "actions/move_right": env.env.action_probs[RailEnvActions.MOVE_RIGHT],
+                    "actions/stop_moving": env.env.action_probs[RailEnvActions.STOP_MOVING],
+                    "timers/step": step_timer.get(),
+                    "timers/reset": reset_timer.get(),
+                    "timers/learn": learn_timer.get(),
+                })
+            
             ppo.reset_stats()
 
     return env.env.accumulated_normalized_score, \
