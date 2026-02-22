@@ -127,7 +127,7 @@ def train():
         # ============================
         # Action Masking / Skipping
         # ============================
-        "action_masking": True,
+        "action_masking": False,
         "allow_no_op": False,
 
         # ============================
