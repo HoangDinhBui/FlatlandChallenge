@@ -84,7 +84,7 @@ def train():
         # ============================
         # Training setup
         # ============================
-        "n_episodes": 500,
+        "n_episodes": 2000,
         "horizon": 2048,
         "epochs": 8,
         # 64, 128, 256
