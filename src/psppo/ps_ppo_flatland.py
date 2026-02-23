@@ -240,7 +240,7 @@ def train_multiple_agents(env_params, train_params):
             ppo.reset_stats()
 
     # Save model sau khi train xong
-    ppo.save_policy("gnn_model.pt")
+    ppo.save("gnn_model.pt")
     print("Model saved to gnn_model.pt")
 
     return env.env.accumulated_normalized_score, \
