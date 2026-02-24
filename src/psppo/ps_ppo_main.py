@@ -45,10 +45,10 @@ def train():
         "uniform_reward": True,
         "stop_penalty": -0.2,
         "invalid_action_penalty": -0.0,
-        "deadlock_penalty": -20.0, # -5.0
+        "deadlock_penalty": -10.0, # -5.0
         # 1.0 for skipping
         "shortest_path_penalty_coefficient": 1.2,
-        "done_bonus": 1.0, # 0.2
+        "done_bonus": 0.5, # 0.2
     }
 
     training_parameters = {
