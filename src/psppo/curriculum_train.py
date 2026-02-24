@@ -58,9 +58,9 @@ def curriculum_train():
         "custom_observations": False,
         "reward_shaping": True, "uniform_reward": True,
         "stop_penalty": -0.2, "invalid_action_penalty": -0.0,
-        "deadlock_penalty": -5.0,
+        "deadlock_penalty": -20.0,
         "shortest_path_penalty_coefficient": 1.2,
-        "done_bonus": 0.2,
+        "done_bonus": 1.0,
     }
 
     # ==========================================
