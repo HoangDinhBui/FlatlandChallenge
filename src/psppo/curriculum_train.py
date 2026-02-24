@@ -67,7 +67,7 @@ def curriculum_train():
     # Stage 1: 3 tàu, map nhỏ
     # ==========================================
     print("\n>>> STAGE 1: 3 trains, 20x20 map, 500 episodes")
-    env_s1 = {**base_env, "n_agents": 3, "x_dim": 20, "y_dim": 20, "n_cities": 3}
+    env_s1 = {**base_env, "n_agents": 3, "x_dim": 30, "y_dim": 30, "n_cities": 3}
     train_s1 = {**base_training,
                 "load_model_path": "",
                 "save_model_path": "curriculum_stage1.pt",
@@ -79,7 +79,7 @@ def curriculum_train():
     # Stage 2: 5 tàu, map vừa
     # ==========================================
     print("\n>>> STAGE 2: 5 trains, 35x35 map, 500 episodes")
-    env_s2 = {**base_env, "n_agents": 5, "x_dim": 35, "y_dim": 35, "n_cities": 5}
+    env_s2 = {**base_env, "n_agents": 5, "x_dim": 40, "y_dim": 40, "n_cities": 5}
     train_s2 = {**base_training,
                 "load_model_path": "curriculum_stage1.pt",
                 "save_model_path": "curriculum_stage2.pt",
