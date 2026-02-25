@@ -58,17 +58,18 @@ def curriculum_train():
         "custom_observations": False,
         "reward_shaping": True, "uniform_reward": True,
         "stop_penalty": -0.2, "invalid_action_penalty": -0.0,
-        "deadlock_penalty": -7.0,
+        "deadlock_penalty": -10.0,
         "shortest_path_penalty_coefficient": 1.2,
-        "done_bonus": 0.3,
+        "done_bonus": 0.5,
     }
 
     # ==========================================
-    # Stage 1: 3 tàu, map nhỏ
+    # Stage 1: 3 tàu, map 30x30
     # ==========================================
-    print("\n>>> STAGE 1: 3 trains, 20x20 map, 500 episodes")
+    print("\n>>> STAGE 1: 3 trains, 30x30 map, 600 episodes")
     env_s1 = {**base_env, "n_agents": 3, "x_dim": 30, "y_dim": 30, "n_cities": 3}
     train_s1 = {**base_training,
+                "n_episodes": 600,
                 "load_model_path": "",
                 "save_model_path": "curriculum_stage1.pt",
                 "wandb_tag": "curriculum-stage1"}
@@ -76,11 +77,12 @@ def curriculum_train():
     print(">>> Stage 1 done! Saved: curriculum_stage1.pt")
 
     # ==========================================
-    # Stage 2: 5 tàu, map vừa
+    # Stage 2: 5 tàu, map 40x40
     # ==========================================
-    print("\n>>> STAGE 2: 5 trains, 35x35 map, 500 episodes")
-    env_s2 = {**base_env, "n_agents": 5, "x_dim": 40, "y_dim": 40, "n_cities": 5}
+    print("\n>>> STAGE 2: 5 trains, 40x40 map, 600 episodes")
+    env_s2 = {**base_env, "n_agents": 5, "x_dim": 40, "y_dim": 40, "n_cities": 4}
     train_s2 = {**base_training,
+                "n_episodes": 600,
                 "load_model_path": "curriculum_stage1.pt",
                 "save_model_path": "curriculum_stage2.pt",
                 "wandb_tag": "curriculum-stage2"}
@@ -88,12 +90,26 @@ def curriculum_train():
     print(">>> Stage 2 done! Saved: curriculum_stage2.pt")
 
     # ==========================================
-    # Stage 3: 8 tàu, map lớn
+    # Stage 2.5: 6 tàu, map 45x30
     # ==========================================
-    print("\n>>> STAGE 3: 8 trains, 48x27 map, 500 episodes")
+    print("\n>>> STAGE 2.5: 6 trains, 45x30 map, 600 episodes")
+    env_s2_5 = {**base_env, "n_agents": 6, "x_dim": 45, "y_dim": 30, "n_cities": 5}
+    train_s2_5 = {**base_training,
+                  "n_episodes": 600,
+                  "load_model_path": "curriculum_stage2.pt",
+                  "save_model_path": "curriculum_stage2_5.pt",
+                  "wandb_tag": "curriculum-stage2-5"}
+    train_multiple_agents(Namespace(**env_s2_5), Namespace(**train_s2_5))
+    print(">>> Stage 2.5 done! Saved: curriculum_stage2_5.pt")
+
+    # ==========================================
+    # Stage 3: 8 tàu, map 48x27
+    # ==========================================
+    print("\n>>> STAGE 3: 8 trains, 48x27 map, 600 episodes")
     env_s3 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5}
     train_s3 = {**base_training,
-                "load_model_path": "curriculum_stage2.pt",
+                "n_episodes": 600,
+                "load_model_path": "curriculum_stage2_5.pt",
                 "save_model_path": "curriculum_stage3.pt",
                 "wandb_tag": "curriculum-stage3"}
     train_multiple_agents(Namespace(**env_s3), Namespace(**train_s3))
