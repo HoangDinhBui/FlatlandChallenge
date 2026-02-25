@@ -115,9 +115,24 @@ def curriculum_train():
     train_multiple_agents(Namespace(**env_s3), Namespace(**train_s3))
     print(">>> Stage 3 done! Saved: curriculum_stage3.pt")
 
+    # ==========================================
+    # Stage 4: Fine-tuning - giảm penalty để recover completion
+    # ==========================================
+    print("\n>>> STAGE 4: Fine-tune 8 trains, 48x27, 500 episodes")
+    env_s4 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
+              "deadlock_penalty": -5.0,   # giảm penalty
+              "done_bonus": 0.8}           # tăng bonus về đích
+    train_s4 = {**base_training,
+                "n_episodes": 500,
+                "load_model_path": "curriculum_stage3.pt",
+                "save_model_path": "curriculum_stage4.pt",
+                "wandb_tag": "curriculum-stage4"}
+    train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
+    print(">>> Stage 4 done! Saved: curriculum_stage4.pt")
+
     print("\n" + "=" * 60)
     print("CURRICULUM TRAINING COMPLETE!")
-    print("Final model: curriculum_stage3.pt")
+    print("Final model: curriculum_stage4.pt")
     print("=" * 60)
 
 if __name__ == "__main__":
