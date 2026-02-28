@@ -156,3 +156,45 @@ def get_enhanced_action_masking(env, agent_handle, action_size, train_params):
         action_mask[RailEnvActions.DO_NOTHING] = 1
 
     return action_mask
+
+
+def get_priority_based_masking(env, agent_id, action_size, train_params):
+    """
+    Level 4: Priority-based conflict resolution
+    Tàu id nhỏ hơn có priority cao hơn
+    Khi 2 tàu sắp gặp nhau → tàu id lớn hơn tự STOP nhường
+    """
+    # Lấy mask từ enhanced masking trước
+    action_mask = get_enhanced_action_masking(env, agent_id, action_size, train_params)
+
+    rail_env = env.get_rail_env()
+    agent = rail_env.agents[agent_id]
+
+    from flatland.envs.agent_utils import TrainState
+    if agent.state not in [TrainState.MOVING, TrainState.STOPPED, TrainState.MALFUNCTION]:
+        return action_mask
+    if agent.position is None:
+        return action_mask
+
+    for other_id, other_agent in enumerate(rail_env.agents):
+        if other_id == agent_id:
+            continue
+        if other_agent.position is None:
+            continue
+        from flatland.envs.agent_utils import TrainState as TS
+        if other_agent.state not in [TS.MOVING, TS.STOPPED, TS.MALFUNCTION]:
+            continue
+
+        dist = abs(agent.position[0] - other_agent.position[0]) + \
+               abs(agent.position[1] - other_agent.position[1])
+
+        if dist <= 3:
+            is_head_on = abs(agent.direction - other_agent.direction) == 2
+
+            if is_head_on and agent_id > other_id:
+                # Tàu priority thấp hơn → chỉ cho STOP
+                priority_mask = [False] * action_size
+                priority_mask[4] = True
+                return priority_mask
+
+    return action_mask
