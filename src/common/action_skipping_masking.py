@@ -162,8 +162,10 @@ def get_priority_based_masking(env, agent_id, action_size, train_params):
     """
     Level 4: Priority-based conflict resolution
     Tàu id nhỏ hơn có priority cao hơn.
-    Mở rộng: check cả head-on VÀ cùng tranh đoạn ray (dist <= 2)
-    Tàu priority thấp hơn (id lớn hơn) tự STOP nhường.
+    Chỉ STOP khi:
+      - dist == 1 (sát nhau), HOẶC
+      - dist == 2 VÀ đang tiến về phía tàu priority cao (moving toward)
+    Không STOP nếu tàu kia đang STOPPED (tránh mutual deadlock dây chuyền).
     """
     action_mask = get_enhanced_action_masking(env, agent_id, action_size, train_params)
 
@@ -176,19 +178,35 @@ def get_priority_based_masking(env, agent_id, action_size, train_params):
     if agent.position is None:
         return action_mask
 
+    # Vector hướng di chuyển: N=0, E=1, S=2, W=3
+    dir_vectors = {0: (-1, 0), 1: (0, 1), 2: (1, 0), 3: (0, -1)}
+
     for other_id, other_agent in enumerate(rail_env.agents):
-        if other_id == agent_id:
-            continue
+        if other_id >= agent_id:
+            continue  # chỉ nhường tàu priority cao hơn (id nhỏ hơn)
         if other_agent.position is None:
             continue
-        if other_agent.state not in [TrainState.MOVING, TrainState.STOPPED, TrainState.MALFUNCTION]:
-            continue
+        if other_agent.state not in [TrainState.MOVING, TrainState.MALFUNCTION]:
+            continue  # không nhường tàu đang STOPPED → tránh deadlock dây chuyền
 
         dist = abs(agent.position[0] - other_agent.position[0]) + \
                abs(agent.position[1] - other_agent.position[1])
 
-        # Mở rộng: check cả head-on VÀ cùng tranh đoạn ray (dist <= 2)
-        if dist <= 2 and agent_id > other_id:
+        should_stop = False
+
+        if dist == 1:
+            # Sát nhau → luôn nhường
+            should_stop = True
+        elif dist == 2:
+            # Chỉ nhường nếu đang tiến về phía tàu kia
+            dv = dir_vectors.get(agent.direction, (0, 0))
+            next_pos = (agent.position[0] + dv[0], agent.position[1] + dv[1])
+            next_dist = abs(next_pos[0] - other_agent.position[0]) + \
+                        abs(next_pos[1] - other_agent.position[1])
+            if next_dist < dist:
+                should_stop = True
+
+        if should_stop:
             priority_mask = [False] * action_size
             priority_mask[4] = True  # chỉ STOP
             return priority_mask
