@@ -28,9 +28,11 @@ def finetune():
         "last_critic_layer_scaling": 0.1,
         "actor_mlp_width": 128, "actor_mlp_depth": 3,
         "last_actor_layer_scaling": 0.01,
-        "learning_rate": 0.002, "adam_eps": 1e-5,
+        # "learning_rate": 0.002, "adam_eps": 1e-5,  # original
+        "learning_rate": 0.0005, "adam_eps": 1e-5,   # ← giảm lr để fine-tune ổn định
         "activation": "Tanh", "lmbda": 0.95,
-        "entropy_coefficient": 0.01, "value_loss_coefficient": 0.001,
+        # "entropy_coefficient": 0.01, "value_loss_coefficient": 0.001,  # original
+        "entropy_coefficient": 0.005, "value_loss_coefficient": 0.001,  # ← giảm entropy để exploit
         "n_episodes": 500,
         "horizon": 2048, "epochs": 8,
         "batch_size": 256, "batch_mode": "shuffle",

@@ -116,20 +116,24 @@ def curriculum_train():
     train_multiple_agents(Namespace(**env_s3), Namespace(**train_s3))
     print(">>> Stage 3 done! Saved: curriculum_stage3.pt")
 
-    # # ==========================================
-    # # Stage 4: Fine-tuning - giảm penalty để recover completion
-    # # ==========================================
-    # print("\n>>> STAGE 4: Fine-tune 8 trains, 48x27, 500 episodes")
-    # env_s4 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
-    #           "deadlock_penalty": -10.0,   # giảm penalty
-    #           "done_bonus": 2.0}           # tăng bonus về đích
-    # train_s4 = {**base_training,
-    #             "n_episodes": 500,
-    #             "load_model_path": "curriculum_stage3.pt",
-    #             "save_model_path": "curriculum_stage4.pt",
-    #             "wandb_tag": "curriculum-stage4"}
-    # train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
-    # print(">>> Stage 4 done! Saved: curriculum_stage4.pt")
+    # ==========================================
+    # Stage 4: Fine-tuning - tăng done_bonus, giảm learning rate
+    # ==========================================
+    print("\n>>> STAGE 4: Fine-tune 8 trains, 48x27, 500 episodes")
+    env_s4 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
+              "deadlock_penalty": -10.0,
+              "done_bonus": 2.0}
+    train_s4 = {**base_training,
+                "n_episodes": 500,
+                # "learning_rate": 0.002,  # original (from base_training)
+                "learning_rate": 0.0005,   # ← giảm lr để fine-tune ổn định
+                # "entropy_coefficient": 0.01,  # original (from base_training)
+                "entropy_coefficient": 0.005,  # ← giảm entropy để exploit nhiều hơn
+                "load_model_path": "curriculum_stage3.pt",
+                "save_model_path": "curriculum_stage4.pt",
+                "wandb_tag": "curriculum-stage4"}
+    train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
+    print(">>> Stage 4 done! Saved: curriculum_stage4.pt")
 
     # print("\n" + "=" * 60)
     # print("CURRICULUM TRAINING COMPLETE!")
@@ -148,8 +152,8 @@ def curriculum_train():
         save_dir = '/content/drive/MyDrive/flatland_models'
         os.makedirs(save_dir, exist_ok=True)
         
-        for f in ['curriculum_stage1.pt', 'curriculum_stage2.pt', 
-                  'curriculum_stage3.pt', 'gnn_model.pt']:
+        for f in ['curriculum_stage1.pt', 'curriculum_stage2.pt',
+                  'curriculum_stage3.pt', 'curriculum_stage4.pt']:
             src = f'/content/FlatlandChallenge/{f}'
             dst = f'{save_dir}/{f}'
             if os.path.exists(src):
@@ -165,7 +169,7 @@ def curriculum_train():
 
     print("\n" + "=" * 60)
     print("CURRICULUM TRAINING COMPLETE!")
-    print("Final model: curriculum_stage3.pt")
+    print("Final model: curriculum_stage4.pt")
     print("=" * 60)
 
 if __name__ == "__main__":
