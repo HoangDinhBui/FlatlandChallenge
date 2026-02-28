@@ -2,6 +2,7 @@ from argparse import Namespace
 from datetime import datetime
 from flatland.envs.malfunction_generators import MalfunctionParameters
 from src.psppo.ps_ppo_flatland import train_multiple_agents
+import os
 
 def curriculum_train():
     print("=" * 60)
@@ -69,7 +70,7 @@ def curriculum_train():
     print("\n>>> STAGE 1: 3 trains, 30x30 map, 600 episodes")
     env_s1 = {**base_env, "n_agents": 3, "x_dim": 30, "y_dim": 30, "n_cities": 3}
     train_s1 = {**base_training,
-                "n_episodes": 600,
+                "n_episodes": 500,
                 "load_model_path": "",
                 "save_model_path": "curriculum_stage1.pt",
                 "wandb_tag": "curriculum-stage1"}
@@ -82,25 +83,25 @@ def curriculum_train():
     print("\n>>> STAGE 2: 5 trains, 40x40 map, 600 episodes")
     env_s2 = {**base_env, "n_agents": 5, "x_dim": 40, "y_dim": 40, "n_cities": 4}
     train_s2 = {**base_training,
-                "n_episodes": 600,
+                "n_episodes": 500,
                 "load_model_path": "curriculum_stage1.pt",
                 "save_model_path": "curriculum_stage2.pt",
                 "wandb_tag": "curriculum-stage2"}
     train_multiple_agents(Namespace(**env_s2), Namespace(**train_s2))
     print(">>> Stage 2 done! Saved: curriculum_stage2.pt")
 
-    # ==========================================
-    # Stage 2.5: 6 tàu, map 45x30
-    # ==========================================
-    print("\n>>> STAGE 2.5: 6 trains, 45x30 map, 600 episodes")
-    env_s2_5 = {**base_env, "n_agents": 6, "x_dim": 45, "y_dim": 30, "n_cities": 5}
-    train_s2_5 = {**base_training,
-                  "n_episodes": 600,
-                  "load_model_path": "curriculum_stage2.pt",
-                  "save_model_path": "curriculum_stage2_5.pt",
-                  "wandb_tag": "curriculum-stage2-5"}
-    train_multiple_agents(Namespace(**env_s2_5), Namespace(**train_s2_5))
-    print(">>> Stage 2.5 done! Saved: curriculum_stage2_5.pt")
+    # # ==========================================
+    # # Stage 2.5: 6 tàu, map 45x30
+    # # ==========================================
+    # print("\n>>> STAGE 2.5: 6 trains, 45x30 map, 600 episodes")
+    # env_s2_5 = {**base_env, "n_agents": 6, "x_dim": 45, "y_dim": 30, "n_cities": 5}
+    # train_s2_5 = {**base_training,
+    #               "n_episodes": 600,
+    #               "load_model_path": "curriculum_stage2.pt",
+    #               "save_model_path": "curriculum_stage2_5.pt",
+    #               "wandb_tag": "curriculum-stage2-5"}
+    # train_multiple_agents(Namespace(**env_s2_5), Namespace(**train_s2_5))
+    # print(">>> Stage 2.5 done! Saved: curriculum_stage2_5.pt")
 
     # ==========================================
     # Stage 3: 8 tàu, map 48x27
@@ -108,31 +109,63 @@ def curriculum_train():
     print("\n>>> STAGE 3: 8 trains, 48x27 map, 600 episodes")
     env_s3 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5}
     train_s3 = {**base_training,
-                "n_episodes": 600,
-                "load_model_path": "curriculum_stage2_5.pt",
+                "n_episodes": 500,
+                "load_model_path": "curriculum_stage2.pt",
                 "save_model_path": "curriculum_stage3.pt",
                 "wandb_tag": "curriculum-stage3"}
     train_multiple_agents(Namespace(**env_s3), Namespace(**train_s3))
     print(">>> Stage 3 done! Saved: curriculum_stage3.pt")
 
+    # # ==========================================
+    # # Stage 4: Fine-tuning - giảm penalty để recover completion
+    # # ==========================================
+    # print("\n>>> STAGE 4: Fine-tune 8 trains, 48x27, 500 episodes")
+    # env_s4 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
+    #           "deadlock_penalty": -10.0,   # giảm penalty
+    #           "done_bonus": 2.0}           # tăng bonus về đích
+    # train_s4 = {**base_training,
+    #             "n_episodes": 500,
+    #             "load_model_path": "curriculum_stage3.pt",
+    #             "save_model_path": "curriculum_stage4.pt",
+    #             "wandb_tag": "curriculum-stage4"}
+    # train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
+    # print(">>> Stage 4 done! Saved: curriculum_stage4.pt")
+
+    # print("\n" + "=" * 60)
+    # print("CURRICULUM TRAINING COMPLETE!")
+    # print("Final model: curriculum_stage4.pt")
+    # print("=" * 60)
+
     # ==========================================
-    # Stage 4: Fine-tuning - giảm penalty để recover completion
+    # Auto-save lên Google Drive
     # ==========================================
-    print("\n>>> STAGE 4: Fine-tune 8 trains, 48x27, 500 episodes")
-    env_s4 = {**base_env, "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
-              "deadlock_penalty": -5.0,   # giảm penalty
-              "done_bonus": 0.8}           # tăng bonus về đích
-    train_s4 = {**base_training,
-                "n_episodes": 500,
-                "load_model_path": "curriculum_stage3.pt",
-                "save_model_path": "curriculum_stage4.pt",
-                "wandb_tag": "curriculum-stage4"}
-    train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
-    print(">>> Stage 4 done! Saved: curriculum_stage4.pt")
+    print("\n>>> Saving models to Google Drive...")
+    try:
+        from google.colab import drive
+        drive.mount('/content/drive', force_remount=False)
+        
+        import shutil
+        save_dir = '/content/drive/MyDrive/flatland_models'
+        os.makedirs(save_dir, exist_ok=True)
+        
+        for f in ['curriculum_stage1.pt', 'curriculum_stage2.pt', 
+                  'curriculum_stage3.pt', 'gnn_model.pt']:
+            src = f'/content/FlatlandChallenge/{f}'
+            dst = f'{save_dir}/{f}'
+            if os.path.exists(src):
+                shutil.copy(src, dst)
+                print(f"  ✅ Saved {f}")
+            else:
+                print(f"  ⚠️ Not found: {f}")
+        
+        print(f">>> All models saved to {save_dir}")
+    except Exception as e:
+        print(f"  ⚠️ Drive save failed: {e}")
+        print("  → Models still available at /content/FlatlandChallenge/")
 
     print("\n" + "=" * 60)
     print("CURRICULUM TRAINING COMPLETE!")
-    print("Final model: curriculum_stage4.pt")
+    print("Final model: curriculum_stage3.pt")
     print("=" * 60)
 
 if __name__ == "__main__":
