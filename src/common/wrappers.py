@@ -231,8 +231,7 @@ class RewardsWrapper(gym.Wrapper):
                     elif action == 3:  new_dir = (direction + 1) % 4
                     else:              new_dir = direction
 
-                    # When get_transitions is called directly on Flatland 3/4
-                    transitions = rail_env.rail.get_transitions((pos, direction))
+                    transitions = rail_env.rail.get_transitions(pos[0], pos[1], direction)
                     if transitions[new_dir] == 0:
                         is_valid = False
 
@@ -270,7 +269,7 @@ class ActionSkippingWrapper(gym.Wrapper):
                 is_switch = False
                 # Check for switch: if there is more than one outgoing transition
                 for orientation in directions:
-                    possible_transitions = self.unwrapped.rail_env.rail.get_transitions((pos, orientation))
+                    possible_transitions = self.unwrapped.rail_env.rail.get_transitions(pos[0], pos[1], orientation)
                     num_transitions = np.count_nonzero(possible_transitions)
                     if num_transitions > 1:
                         switches.append(pos)
@@ -279,7 +278,7 @@ class ActionSkippingWrapper(gym.Wrapper):
                 if is_switch:
                     # Add all neighbouring rails, if pos is a switch
                     for orientation in directions:
-                        possible_transitions = self.unwrapped.rail_env.rail.get_transitions((pos, orientation))
+                        possible_transitions = self.unwrapped.rail_env.rail.get_transitions(pos[0], pos[1], orientation)
                         for movement in directions:
                             if possible_transitions[movement]:
                                 switches_neighbors.append(get_new_position(pos, movement))
