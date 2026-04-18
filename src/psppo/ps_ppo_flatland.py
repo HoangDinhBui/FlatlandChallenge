@@ -1,4 +1,6 @@
 import random
+import csv
+import os
 
 import numpy as np
 import torch
@@ -46,6 +48,9 @@ def train_multiple_agents(env_params, train_params):
     # Training setup parameters
     n_episodes = train_params.n_episodes
     horizon = train_params.horizon
+
+    csv_log_path = getattr(train_params, "csv_log_path", None)
+    csv_rows = []
 
     # Set the seeds
     random.seed(seed)
@@ -209,7 +214,7 @@ def train_multiple_agents(env_params, train_params):
                                                    "reset": reset_timer,
                                                    "learn": learn_timer,
                                                    "train": training_timer})
-            
+
             # Log metrics to WandB
             if use_wandb and ppo.are_stats_ready():
                 wandb.log({
@@ -236,8 +241,46 @@ def train_multiple_agents(env_params, train_params):
                     "timers/reset": reset_timer.get(),
                     "timers/learn": learn_timer.get(),
                 })
-            
-            ppo.reset_stats()
+
+        csv_rows.append({
+            "episode": episode,
+            "score": float(env.env.normalized_score),
+            "accumulated_score": float(np.mean(env.env.accumulated_normalized_score)),
+            "completion": float(env.env.completion_percentage),
+            "accumulated_completion": float(np.mean(env.env.accumulated_completion)),
+            "deadlocks": float(env.env.deadlocks_percentage),
+            "accumulated_deadlocks": float(np.mean(env.env.accumulated_deadlocks)),
+            "policy_loss": float(ppo.get_stat("policy_loss")) if ppo.are_stats_ready() else None,
+            "value_loss": float(ppo.get_stat("value_loss")) if ppo.are_stats_ready() else None,
+            "entropy_loss": float(ppo.get_stat("entropy_loss")) if ppo.are_stats_ready() else None,
+            "total_loss": float(ppo.get_stat("total_loss")) if ppo.are_stats_ready() else None,
+            "probs_ratio": float(ppo.get_stat("probs_ratio")) if ppo.are_stats_ready() else None,
+            "advantage": float(ppo.get_stat("advantage")) if ppo.are_stats_ready() else None,
+            "state_estimated_value": float(ppo.get_stat("state_estimated_value")) if ppo.are_stats_ready() else None,
+            "action_do_nothing": float(env.env.action_probs[RailEnvActions.DO_NOTHING]),
+            "action_move_left": float(env.env.action_probs[RailEnvActions.MOVE_LEFT]),
+            "action_move_forward": float(env.env.action_probs[RailEnvActions.MOVE_FORWARD]),
+            "action_move_right": float(env.env.action_probs[RailEnvActions.MOVE_RIGHT]),
+            "action_stop_moving": float(env.env.action_probs[RailEnvActions.STOP_MOVING]),
+            "timer_step": float(step_timer.get()),
+            "timer_reset": float(reset_timer.get()),
+            "timer_learn": float(learn_timer.get()),
+            "timer_train": float(training_timer.get()),
+        })
+
+        ppo.reset_stats()
+
+    if csv_log_path:
+        csv_dir = os.path.dirname(csv_log_path)
+        if csv_dir:
+            os.makedirs(csv_dir, exist_ok=True)
+        fieldnames = list(csv_rows[0].keys()) if csv_rows else ["episode"]
+        with open(csv_log_path, "w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            if csv_rows:
+                writer.writerows(csv_rows)
+        print(f"Metrics CSV saved to {csv_log_path}")
 
     # Save model sau khi train xong
     ppo.save("gnn_model.pt")

@@ -73,6 +73,7 @@ def curriculum_train():
                 "n_episodes": 500,
                 "load_model_path": "",
                 "save_model_path": "curriculum_stage1.pt",
+                "csv_log_path": "logs/csv/curriculum_stage1_metrics.csv",
                 "wandb_tag": "curriculum-stage1"}
     train_multiple_agents(Namespace(**env_s1), Namespace(**train_s1))
     print(">>> Stage 1 done! Saved: curriculum_stage1.pt")
@@ -86,6 +87,7 @@ def curriculum_train():
                 "n_episodes": 500,
                 "load_model_path": "curriculum_stage1.pt",
                 "save_model_path": "curriculum_stage2.pt",
+                "csv_log_path": "logs/csv/curriculum_stage2_metrics.csv",
                 "wandb_tag": "curriculum-stage2"}
     train_multiple_agents(Namespace(**env_s2), Namespace(**train_s2))
     print(">>> Stage 2 done! Saved: curriculum_stage2.pt")
@@ -117,6 +119,7 @@ def curriculum_train():
                 "n_episodes": 500,
                 "load_model_path": "curriculum_stage2.pt",
                 "save_model_path": "curriculum_stage3.pt",
+                "csv_log_path": "logs/csv/curriculum_stage3_metrics.csv",
                 "wandb_tag": "curriculum-stage3"}
     train_multiple_agents(Namespace(**env_s3), Namespace(**train_s3))
     print(">>> Stage 3 done! Saved: curriculum_stage3.pt")
@@ -136,6 +139,7 @@ def curriculum_train():
                 "n_episodes": 500,
                 "load_model_path": "curriculum_stage3.pt",
                 "save_model_path": "curriculum_stage4_robust.pt",
+                "csv_log_path": "logs/csv/curriculum_stage4_robust_metrics.csv",
                 "wandb_tag": "curriculum-stage4-robust"}
     train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
     print(">>> Stage 4 done! Saved: curriculum_stage4_robust.pt")
@@ -160,6 +164,7 @@ def curriculum_train():
                 "entropy_coefficient": 0.005,  # ← giảm entropy để exploit nhiều hơn
                 "load_model_path": "curriculum_stage4_robust.pt",
                 "save_model_path": "curriculum_stage5.pt",
+                "csv_log_path": "logs/csv/curriculum_stage5_metrics.csv",
                 "wandb_tag": "curriculum-stage5"}
     train_multiple_agents(Namespace(**env_s5), Namespace(**train_s5))
     print(">>> Stage 5 done! Saved: curriculum_stage5.pt")

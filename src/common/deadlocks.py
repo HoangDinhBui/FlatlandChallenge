@@ -82,13 +82,13 @@ class DeadlocksDetector:
         if pos_a1 is None:
             return None
 
-        if env.rail.get_transitions(pos_a1[0], pos_a1[1], dir_a1)[dir_a1] == 1:
+        if env.rail.get_transitions(((pos_a1[0], pos_a1[1]), dir_a1))[dir_a1] == 1:
             position_check = (pos_a1[0] + self.directions[dir_a1][0], pos_a1[1] + self.directions[dir_a1][1])
             for a2 in range(env.get_num_agents()):
                 if env.agents[a2].position == position_check:
                     return a2
         else:
-            return self._check_feasible_transitions(pos_a1, env.rail.get_transitions(pos_a1[0], pos_a1[1], dir_a1), env)
+            return self._check_feasible_transitions(pos_a1, env.rail.get_transitions(((pos_a1[0], pos_a1[1]), dir_a1)), env)
 
     def _check_deadlocks(self, a1, deadlocks, env):
         """

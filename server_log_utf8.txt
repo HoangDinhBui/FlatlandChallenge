@@ -1,0 +1,195 @@
+﻿pygame 2.6.1 (SDL 2.28.4, Python 3.11.8)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+ * Serving Flask app 'web_visualizer'
+ * Debug mode: off
+python : WARNING: This is 
+a development server. Do 
+not use it in a production 
+deployment. Use a 
+production WSGI server 
+instead.
+At line:1 char:79
++ ... op-Process -Force; 
+python web_visualizer.py > 
+server_log_new.txt 2>&1
++                        ~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecifi    ed: 
+(WARNING: This     
+i...server instea    
+d.:String) [], Rem    
+oteException
+    + FullyQualifiedEr    
+rorId : NativeComm    
+andError
+ 
+ * Running on 
+http://127.0.0.1:5000
+Press CTRL+C to quit
+[2026-03-13 09:40:25,740] 
+ERROR in app: Exception on 
+/init [POST]
+Traceback (most recent 
+call last):
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 1511, 
+in wsgi_app
+    response = self.full_di
+spatch_request()
+               ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 919, 
+in full_dispatch_request
+    rv = self.handle_user_e
+xception(e)
+         ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 917, 
+in full_dispatch_request
+    rv = 
+self.dispatch_request()
+         
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 902, 
+in dispatch_request
+    return self.ensure_sync
+(self.view_functions[rule.e
+ndpoint])(**view_args)  # 
+type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+400, in init_sim
+    sim.init_env(config)
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+109, in init_env
+    self.reset()
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+119, in reset
+    self.obs, _ = 
+self.env.reset()
+                  
+^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flatland\envs\rail_env.py",
+ line 305, in reset
+    rail, optionals = 
+self.rail_generator(
+                      
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flatland\envs\rail_generato
+rs.py", line 47, in 
+__call__
+    return 
+self.generate(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flatland\envs\rail_generato
+rs.py", line 224, in 
+generate
+    raise 
+ValueError("ERROR: Cannot 
+fit more than one city in 
+this map, no feasible 
+environment possible!")
+ValueError: ERROR: Cannot 
+fit more than one city in 
+this map, no feasible 
+environment possible!
+127.0.0.1 - - [13/Mar/2026 
+09:40:25] "POST /init 
+HTTP/1.1" 500 -
+[2026-03-13 09:40:27,787] 
+ERROR in app: Exception on 
+/step [POST]
+Traceback (most recent 
+call last):
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 1511, 
+in wsgi_app
+    response = self.full_di
+spatch_request()
+               ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 919, 
+in full_dispatch_request
+    rv = self.handle_user_e
+xception(e)
+         ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 917, 
+in full_dispatch_request
+    rv = 
+self.dispatch_request()
+         
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython311\Lib\site-packages\
+flask\app.py", line 902, 
+in dispatch_request
+    return self.ensure_sync
+(self.view_functions[rule.e
+ndpoint])(**view_args)  # 
+type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+407, in step_sim
+    state = sim.step()
+            ^^^^^^^^^^
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+200, in step
+    return self.get_state()
+           ^^^^^^^^^^^^^^^^
+  File "D:\FlatlandChalleng
+e\web_visualizer.py", line 
+351, in get_state
+    row.append(int(self.env
+.rail.get_full_transitions(
+r, c)))
+                   ^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' 
+object has no attribute 
+'get_full_transitions'
+127.0.0.1 - - [13/Mar/2026 
+09:40:27] "POST /step 
+HTTP/1.1" 500 -

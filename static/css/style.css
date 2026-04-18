@@ -1,0 +1,336 @@
+
+:root {
+    --bg-deep: #0c061e;
+    --bg-mid: #160e2e;
+    --bg-light: #20163e;
+    --accent: #ffd700;
+    --accent-glow: #ffeb64;
+    --text: #dcd2be;
+    --text-dim: #8c826e;
+    --glass: rgba(25, 15, 45, 0.85);
+    --border: rgba(180, 150, 50, 0.4);
+    --ruby: #dc283c;
+    --sapphire: #1e64dc;
+    --emerald: #1ec850;
+    --amethyst: #a032dc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Glassmorphism Sidebar */
+.sidebar {
+    width: 320px;
+    background: var(--glass);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+}
+
+.sidebar-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.sidebar-header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.config-section, .stats-section {
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.input-group input {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    width: 80px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #b49632, #ffd700);
+    border: none;
+    border-radius: 6px;
+    color: #160e2e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    box-shadow: 0 4px 15px rgba(180, 150, 50, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(180, 150, 50, 0.5);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-card .label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.stat-card .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+/* Workspace & Canvas */
+.workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #05030f;
+}
+
+.canvas-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.canvas-container:active {
+    cursor: grabbing;
+}
+
+canvas {
+    display: block;
+}
+
+/* Control Bar */
+.control-bar {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    z-index: 100;
+    border-radius: 50px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.playback-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.control-bar button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.control-bar button:hover {
+    color: var(--accent);
+    background: rgba(255,255,255,0.1);
+}
+
+.btn-play {
+    background: var(--accent) !important;
+    color: var(--bg-deep) !important;
+}
+
+.speed-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#speed-slider {
+    width: 120px;
+    accent-color: var(--accent);
+}
+
+#speed-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    min-width: 40px;
+}
+
+/* Overlays */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 6, 30, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 215, 0, 0.1);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.status-badge {
+    background: rgba(100, 255, 100, 0.2);
+    color: #64ff64;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+/* Collapsible Advanced Config */
+.collapsible {
+    margin-top: 10px;
+}
+
+.toggle-advanced {
+    cursor: pointer;
+    font-size: 0.9rem !important;
+    color: var(--text-dim) !important;
+    transition: color 0.2s;
+}
+
+.toggle-advanced:hover {
+    color: var(--accent) !important;
+}
+
+.advanced-fields {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 10px;
+    border-left: 1px solid var(--border);
+    margin-left: 5px;
+}
+
+.advanced-fields.open {
+    max-height: 500px;
+}
+
+/* View Mode Selector */
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.view-controls select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+.view-controls select option {
+    background: var(--bg-mid);
+}
+
+.toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    padding: 12px 24px;
+    background: var(--sapphire);
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 0.3s;
+}

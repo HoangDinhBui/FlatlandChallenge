@@ -366,9 +366,9 @@ class GNNPsPPO(nn.Module):
         # Load model nếu có
         if "load_model_path" in train_params and train_params.load_model_path:
             self.load(train_params.load_model_path)
-        if self.evaluation_mode:
-            import sys
-            sys.exit()
+        # if self.evaluation_mode:
+        #     import sys
+        #     sys.exit()
 
     def _encode(self, state_batch):
         """

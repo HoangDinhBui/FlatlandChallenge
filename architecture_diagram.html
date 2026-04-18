@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấu trúc Hệ thống Flatland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --glow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            padding: 40px;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            letter-spacing: 1px;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        /* Trains Section */
+        .train-stack {
+            position: absolute;
+            left: 50px;
+            top: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .node {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 400;
+            box-shadow: var(--glow);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .node:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+        }
+
+        .train-node { width: 120px; text-align: center; }
+        .component-node { 
+            padding: 20px 30px; 
+            font-weight: 600;
+            color: var(--primary);
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Layout Grid */
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            padding-left: 150px;
+        }
+
+        /* Shared Theta */
+        .shared-theta {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 40px;
+            background: linear-gradient(90deg, transparent, var(--card-bg), transparent);
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* Arrows */
+        svg.connecting-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .arrow-head { fill: var(--primary); }
+        .line { 
+            stroke: var(--primary); 
+            stroke-width: 2; 
+            fill: none; 
+            stroke-dasharray: 530;
+            stroke-dashoffset: 530;
+            animation: draw 2s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .mask-box {
+            position: absolute;
+            bottom: 120px;
+            right: 180px;
+            color: var(--accent);
+            border-color: var(--accent);
+            border-left: 4px solid var(--accent);
+        }
+
+        .critic-box {
+            position: absolute;
+            top: 380px;
+            right: 350px;
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .global-state-text {
+            position: absolute;
+            top: 450px;
+            right: 480px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .action-node {
+            color: var(--accent);
+            font-weight: 600;
+            border: 2px dashed var(--accent);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">Môi trường Flatland</div>
+
+    <!-- Tàu Stack -->
+    <div class="train-stack">
+        <div class="node train-node" id="t1">Tàu 1</div>
+        <div class="node train-node" id="t2">Tàu 2</div>
+        <div class="node train-node" id="tn">Tàu n</div>
+    </div>
+
+    <!-- Main Flow -->
+    <div class="flow-container">
+        <div class="node component-node" id="treeobs">[TreeObs]</div>
+        <div class="node component-node" id="gat">[GAT]</div>
+        <div class="node component-node" id="actor">[Actor]</div>
+        <div class="node action-node" id="action">Action</div>
+    </div>
+
+    <!-- Side Components -->
+    <div class="node critic-box" id="critic">[Critic]</div>
+    <div class="node mask-box" id="masking">[Action Masking]</div>
+
+    <div class="global-state-text">← global state</div>
+    <div class="shared-theta">└── shared θ (tất cả n tàu) ──┘</div>
+
+    <!-- SVG Connections -->
+    <svg class="connecting-lines">
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" class="arrow-head" />
+            </marker>
+        </defs>
+        <!-- Tàu to TreeObs -->
+        <path class="line" d="M 175 220 L 220 220 L 220 280 L 250 280" />
+        <path class="line" d="M 175 270 L 250 280" />
+        <path class="line" d="M 175 320 L 220 320 L 220 280 L 250 280" />
+        
+        <!-- TreeObs -> GAT -> Actor -> Action -->
+        <path class="line" d="M 370 280 L 440 280" marker-end="url(#arrowhead)" />
+        <path class="line" d="M 525 280 L 600 280" marker-end="url(#arrowhead)" />
+        <path class="line" d="M 685 280 L 755 280" marker-end="url(#arrowhead)" />
+
+        <!-- Masking to Actor -->
+        <path class="line" d="M 700 375 L 700 325" style="stroke: var(--accent);" marker-end="url(#arrowhead)" />
+
+        <!-- GAT to Critic -->
+        <path class="line" d="M 480 325 L 480 375" style="stroke: var(--secondary);" marker-end="url(#arrowhead)" />
+        
+        <!-- Global State to Critic -->
+        <path class="line" d="M 520 445 L 560 410" style="stroke: var(--text-dim); stroke-width: 1;" />
+    </svg>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,5667 @@
+{
+  "head" : {
+    "vars" : [ "station", "stationLabel", "lat", "lon" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54186555"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cổ Loa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.133055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.873055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54305883"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lim"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.146666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.019444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54306404"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Từ Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.120277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.9625"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54308872"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thị Cầu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.195"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.081111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54310802"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sen Hồ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.2525"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.104722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54311011"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phố Tráng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.33917"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.25361"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54311543"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chi Lăng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.601388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.534722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54313522"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.809722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.761944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54313729"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Hòa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.556111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.489722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314050"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Mỏ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.651388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.576944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314315"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bắc Thủy"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.713611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.665"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314436"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bản Thí"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.766944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.733611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314586"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bắc Lệ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.516111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.431388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314681"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phố Vị"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.473333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.378333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54314779"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Voi Xô"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.438611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.338055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54333320"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thái Nguyên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.586777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.823652777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54335890"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lương Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.4908505"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.8776866"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54336232"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phổ Yên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.411111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.876944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54336542"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trung Giã"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.315277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.871388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54336614"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đa Phúc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.232777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.860833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54353665"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vĩnh Yên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.308888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.601944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54887447"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thường Tín"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.869444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.864722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54887484"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chợ Tía"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.801111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.884722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54887496"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Xuyên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.7375"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.913055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54887531"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Văn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.638611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.918888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55840782"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bắc Hồng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.171666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.799722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842968"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phố Lu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.315"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.187222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842970"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Nhô"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.279722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.245555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842977"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Làng Giàng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.428888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.046388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842978"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thái Niên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.399722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.085833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842979"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lạng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.367777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.135"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842988"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thái Văn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.234444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.284722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842993"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bảo Hà"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.178611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.355"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842996"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lang Thíp"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.120833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.414444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55842997"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lang Khay"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.068888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.475833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843002"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lâm Giang"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.048333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.496666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843005"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trái Hút"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.972222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.591666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843018"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mậu Đông"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.933611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.636944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843019"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mậu A"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.8775"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.694444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843021"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ngòi Hóp"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.822222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.755"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843026"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cổ Phúc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.760833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.830555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843033"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Văn Phú"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.678333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.926944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843052"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đoan Thượng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.619722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.950277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843057"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ấm Thượng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.560277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.005555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843062"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vũ Ẻn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.4875"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.085833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843063"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chí Chủ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.429722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.153055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843069"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tiên Kiên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.366944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.291944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843071"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phủ Đức"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.338888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.365833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843076"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bạch Hạc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.290277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.464722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843077"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hướng Lại"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.291666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.519166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843081"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hương Canh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.281111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.646944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843086"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phúc Yên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.240277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.711666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55843088"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thạch Lỗi"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.200555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.75"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55950512"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cát Đằng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.295277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.025"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q55950540"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Yên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.203888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.965555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q57307316"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vạn Điểm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.771111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.901111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195839"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Thụy"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.003611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.961944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195849"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lạc Đạo"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.983055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.030277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195858"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tuấn Lương"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.970555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.100277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195876"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cẩm Giàng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.965833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.173055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195896"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cao Xá"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.944722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.272222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195905"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tiền Trung"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.9675"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.378611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60195925"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lai Khê"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.977777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.413611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60258761"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cái Lân"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.971666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.040277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60298456"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Na Dương"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.701111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.958611"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60298484"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tân Liên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.81286"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.82548"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299749"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Khúc Rồng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.580278"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.926944"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299789"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phạm Xá"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.968888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.452222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299803"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Thai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.965555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.511388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299808"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Dụ Nghĩa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.915277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.564444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299810"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vật Cách"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.884722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.605"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299815"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thượng Lý"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.865277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.658055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299831"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bình Lục"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.493055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.997222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299833"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Họ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.465833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.049722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299835"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đặng Xá"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.441666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.118888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299861"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hố Nai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.959444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.906111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299868"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Trung"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.523611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.587777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60299874"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Giát"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.159204"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.626829"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325211"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Núi Gôi"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.331388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.076944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325235"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ghềnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.169166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.941111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325243"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Giao"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.138611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.870833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325245"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bỉm Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.081388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.855277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325247"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đò Lèn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.987777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.844444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60325250"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Nghĩa Trang"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.916111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.813888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363448"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hải Vân"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.193778305"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.151224611"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363449"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hải Vân Bắc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.211111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.115833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363452"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hải Vân Nam"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.170277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.136944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363471"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lăng Cô"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.222222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.081111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363478"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Kim Liên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.132222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.120555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363499"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hương Thuỷ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.418055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.664444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363505"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Truồi"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.318888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.774722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363513"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Hai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.269722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.886388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363520"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thừa Lưu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.270833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.994722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363881"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lệ Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.970555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.182777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363889"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Nông Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.886666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.186666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363892"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trà Kiệu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.809444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.231111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363895"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Cang"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.704444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.341388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363898"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga An Mỹ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.596388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.4275"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363901"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Diêm Phổ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.476111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.586944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363906"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Núi Thành"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.421111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.669722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363911"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trị Bình"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.348333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.729444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363915"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bình Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.286944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.758888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363919"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đại Lộc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.195"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.765833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363926"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Kim Nỗ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.142664"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.790158"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363937"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Diễn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.051492"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.764667"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363948"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hà Đông"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.952867"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.760328"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60363991"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Thái"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.718333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.707222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364004"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Minh Khôi"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.632777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.701944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364012"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thị Long"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.541666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.71"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364039"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Văn Trai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.457777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.763333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364045"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Khoa Trường"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.375555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.731944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364054"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trường Lâm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.315"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.72"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364060"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hoàng Mai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.268333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.696666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364063"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Lý"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.076666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.585833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364070"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chợ Sy"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.0075"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.575833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364078"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mỹ Lý"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.8975"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.601111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364079"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Quán Hành"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.784444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.6475"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364381"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lệ Kỳ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.404722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.608055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364390"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Long Đại"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.318333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.6275"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364400"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mỹ Đức"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.238333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.695833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364411"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Hòa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.193055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.748333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364424"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mỹ Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.186666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.805555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364433"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thượng Lâm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.152777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.858333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364443"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sa Lung"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.058611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.966111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364450"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tiên An"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.977777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.03"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364455"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Văn Xá"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.508333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.503055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364461"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hà Thanh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.908055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.077222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364469"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Quảng Trị"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.737777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.186944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364476"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Diên Sanh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.687222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.247222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364483"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mỹ Chánh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.628055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.305"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364492"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phò Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.584444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.361666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364498"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hiền Sỹ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.529166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.431944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364533"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Xuân"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.603888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.62"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364548"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đức Lạc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.482777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.583055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364556"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Duệ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.426944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.566388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364563"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Duyệt"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.383888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.601944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364567"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thanh Luyện"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.296388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.636388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364575"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chu Lễ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.223055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.698333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364585"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hương Phố"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.169722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.707777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364594"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phúc Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.110833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.769722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364609"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga La Khê"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.0625"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.826111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364671"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Chuối"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.008055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.903888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364683"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Kim Lũ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.950277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.961388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364689"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Lê"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.887777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.021944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364695"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ngọc Lâm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.828611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.121111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364703"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lạc Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.811388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.188888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364707"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lệ Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.778333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.258055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364715"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Minh Lệ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.712222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.370277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364721"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ngân Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.67"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.394166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364727"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thọ Lộc"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.618888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.458611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364731"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hoàn Lão"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.575555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.522222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364734"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phúc Tự"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.551666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.542777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364774"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Suối Vận"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.920555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.867222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364783"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Phan"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.874444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.751666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364789"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Dinh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.921388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.672777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364792"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Suối Kiết"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.968333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.630277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364797"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Gia Huynh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.985277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.541388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364802"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trản Táo"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.9675"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.488055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364805"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Gia Ray"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.964166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.403055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364809"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bảo Chánh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.9525"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.325833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364815"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Long Khánh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.933333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.245833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364820"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Dầu Giây"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.930833"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.137778"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60364822"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trảng Bom"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.944722"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.993889"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367150"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phù Mỹ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.184166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.039722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367167"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vạn Phú"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.313888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.064166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367176"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Giã"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.7"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.223611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367190"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cây Cầy"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.216944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.080277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367197"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phong Thạnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.433333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.125833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367202"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ninh Hòa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.488888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.122777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367205"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Huỳnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.574444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.168055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367212"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tam Quan"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.547777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.043611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367216"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Vinh Tây"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.022778"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.834167"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367224"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ma Lâm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.0725"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.131666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367228"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Long Thạnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.128888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.204722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367240"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đông Tác"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.055833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.321944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367245"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Hiệp"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.000277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.361111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367251"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hảo Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.908333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.376666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367255"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đại Lãnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.833888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.360555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367261"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tu Bông"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.777777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.300833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367271"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Tân"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.121388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.098611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367283"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vĩnh Hảo"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.309444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.741944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367289"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cà Ná"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.351944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.876388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367294"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Trinh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.499166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.911388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367302"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Lòng Sông"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.263611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.673888888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367386"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Mao"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.248888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.506666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367395"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Châu Hanh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.227777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.425"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367402"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sông Lũy"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.214722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.3225"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367413"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phước Nhơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.666388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.993333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367418"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Suối Cát"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.0275"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.040277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367429"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ngã Ba"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.925833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.121111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367433"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cà Rôm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.779722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.079166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367442"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hòa Đa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.205277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.270277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367454"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tân Vinh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.7075"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.049444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367461"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vân Canh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.620555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.996944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367464"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phước Lãnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.486111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.030833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367466"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga La Hai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.381666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.105833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367471"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chí Thạnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.304722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.219444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367481"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mộ Đức"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.954722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.865277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367484"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thạch Trụ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.880277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.910277777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367487"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đức Phổ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.809722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.946388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q527753"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Hới"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "17.469274305"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.600106388"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4838555"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bắc Giang"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.278888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.191388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4838561"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bắc Ninh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.178333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.055833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4914343"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bình Thuận"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.96861111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.00305556"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5270017"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Dĩ An"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.907777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.769166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5295707"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đông Anh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.153055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.851944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5295730"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đông Hà"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.811111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.111666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5557794"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Gia Lâm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.0525"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.88111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5558563"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Giáp Bát"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.978611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.84"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5636439"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hạ Long"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.974444444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.010833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5638921"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hải Dương"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.94778"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.32972"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5962539"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Long Biên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.039722"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.850278"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5962872"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lào Cai"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "22.4925"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "103.97833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7897882"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Uông Bí"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.034722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.755555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7913293"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Văn Điển"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.943888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.843611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7928448"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Việt Trì"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.300555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.431666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7932534"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vinh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.68833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.66444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q8052177"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Bái"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.7022146"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "104.8805667"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q8052178"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Cư"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.982777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.914444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q8052198"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Viên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.086944444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.9175"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6393088"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Kép"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.41694"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.29111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6482797"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lan Mẫu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.290277777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.3375"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6485616"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lạng Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.856388888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.768611111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6706057"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lưu Xá"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.562222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.847222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6753588"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Mạo Khê"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.0625"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.604722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7188250"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phủ Lý"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.540555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.913055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7188266"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Thọ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.402222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.224166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7268828"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Quán Triều"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.603888888"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.801944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7268850"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Quảng Ngãi"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.120777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.781138888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7273045"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Quy Nhơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.778333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.223333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7561050"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sóng Thần"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.883055555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.753333333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7680466"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tam Kỳ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.5575"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.482777777"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7682014"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tân Ấp"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.033611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.854166666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7710349"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thanh Hóa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "19.811666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.766944444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7710360"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thanh Khê"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.066356"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.182378"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7857223"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tuy Hòa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.0881"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.2973"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q994118"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Huế"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.4565"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.578"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1109565"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đồng Đăng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.9439"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.697"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1207323"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hà Nội"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.02417"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.84083"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1284826"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bình Triệu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.8273107"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.7159599"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1284845"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phan Thiết"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.9418"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.0824"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2012224"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Biên Hòa"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.95083"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.82639"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2151791"
+      },
+      "stationLabel" : {
+        "type" : "literal",
+        "value" : "Q2151791"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.85222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.76667"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2215367"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tháp Chàm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.597222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.95"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2586962"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cầu Bây"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.028611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.917222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2673539"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sài Gòn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.78222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.67722"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3055063"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hải Phòng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.85611111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.6875"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3096348"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đà Lạt"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.942"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.455"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3096350"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đà Nẵng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.0716"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.2092"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3096367"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Diêu Trì"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.80722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.14361111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3097164"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Nam Định"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.42"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.16444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3097205"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Nha Trang"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.24833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.18416667"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q10760429"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bồng Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.438333333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.019444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q16480070"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Lương Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.337777777"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.194444444"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q16877130"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Ninh Bình"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.241999"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.974856"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q17990937"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Gò Vấp"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.8158451"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.684681"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367490"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thủy Trạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.7525"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.006666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367493"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Sa Huỳnh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.661666666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.064722222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367504"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Khánh Phước"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.0875"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.037222222"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367505"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phù Cát"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.994722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.056666666"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60367510"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bình Định"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "13.887222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.100833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60368169"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trại Mát"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.946111111"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.501388888"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60370304"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cẩm Lý"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.215833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.380555555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60433644"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bảo Sơn"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.36968"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.317417"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60433746"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Chí Linh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.154166666"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.446111111"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60433772"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đông Triều"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.094722222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.533055555"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60433801"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Yên Dưỡng"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.045555555"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.700833333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q60433821"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Bàn Cờ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.032222222"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.7775"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q61133207"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hợp Tiến"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.571667"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.016667"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q111181407"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trình Xuyên"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.370833333"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "106.1325"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q109439528"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hàm Cường Tây"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.930978"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.943372"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q109439529"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Cam Thịnh Đông"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.8258514"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.1047542"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q118581513"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thủy Thạch"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "14.7525923"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.0066927"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q112053877"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phú Vinh"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "12.2547312"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "109.1499216"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q112066665"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Trung Hòa (đường sắt Bắc Nam)"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "10.933636"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.062865"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q112130166"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Vĩnh Tân"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.3259126"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.8112846"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q113991198"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Phong Phú (đường sắt Bắc Nam)"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.242376"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.607278"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q113991207"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Tam Thành"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "15.613438"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.418466"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q115861039"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Nghi Long"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "18.825429"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.658253"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q63725495"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Đại Từ"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "21.651394444"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.616808333"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67898988"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Thịnh Châu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "20.509774"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "105.894846"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q130514609"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga An Cựu"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "16.452364852"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "107.599627689"
+      }
+    }, {
+      "station" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q130516167"
+      },
+      "stationLabel" : {
+        "xml:lang" : "vi",
+        "type" : "literal",
+        "value" : "Ga Hàm Liêm"
+      },
+      "lat" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "11.027299"
+      },
+      "lon" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#double",
+        "type" : "literal",
+        "value" : "108.067145"
+      }
+    } ]
+  }
+}

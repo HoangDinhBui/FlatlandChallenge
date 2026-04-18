@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban do Duong sat Viet Nam</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0e17;
+            color: #e0e6ed;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        #app {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 380px;
+            min-width: 380px;
+            background: linear-gradient(180deg, #0f1524 0%, #131a2e 100%);
+            border-right: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar.collapsed {
+            transform: translateX(-380px);
+            min-width: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .sidebar-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .sidebar-header p {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 8px;
+            padding: 12px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 8px 4px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .stat-item .num {
+            font-size: 20px;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .stat-item .label {
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Search */
+        .search-box {
+            padding: 12px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 14px 10px 38px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            color: #e0e6ed;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: rgba(96,165,250,0.4);
+            background: rgba(255,255,255,0.07);
+            box-shadow: 0 0 0 3px rgba(96,165,250,0.1);
+        }
+
+        .search-box input::placeholder { color: #475569; }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 38px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #475569;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        /* Line filters */
+        .line-filters {
+            padding: 12px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .line-filters h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+
+        .line-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding: 7px 10px;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            color: #94a3b8;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: all 0.15s;
+            text-align: left;
+        }
+
+        .line-btn:hover { background: rgba(255,255,255,0.05); color: #e0e6ed; }
+        .line-btn.active { background: rgba(255,255,255,0.08); color: #fff; }
+
+        .line-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .line-count {
+            margin-left: auto;
+            font-size: 11px;
+            color: #475569;
+            background: rgba(255,255,255,0.05);
+            padding: 2px 7px;
+            border-radius: 10px;
+        }
+
+        /* Station list */
+        .station-list-container {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Simulation panel */
+        .simulator-box {
+            margin: 12px 24px;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .sim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .sim-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #93c5fd;
+            font-weight: 700;
+        }
+
+        .sim-status {
+            font-size: 10px;
+            color: #cbd5e1;
+            background: rgba(148,163,184,0.15);
+            border: 1px solid rgba(148,163,184,0.25);
+            border-radius: 999px;
+            padding: 2px 8px;
+        }
+
+        .sim-summary {
+            font-size: 11px;
+            line-height: 1.45;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .sim-actions {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .sim-btn {
+            flex: 1;
+            border: 1px solid rgba(96,165,250,0.35);
+            color: #dbeafe;
+            background: linear-gradient(180deg, rgba(59,130,246,0.28), rgba(29,78,216,0.22));
+            border-radius: 8px;
+            padding: 7px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sim-btn:hover {
+            border-color: rgba(96,165,250,0.6);
+            background: linear-gradient(180deg, rgba(59,130,246,0.36), rgba(29,78,216,0.28));
+        }
+
+        .sim-steps {
+            list-style: none;
+            max-height: 140px;
+            overflow-y: auto;
+            padding-right: 2px;
+        }
+
+        .sim-step {
+            font-size: 11px;
+            color: #94a3b8;
+            line-height: 1.4;
+            padding: 5px 7px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            margin-bottom: 4px;
+        }
+
+        .sim-step.active {
+            color: #e2e8f0;
+            background: rgba(59,130,246,0.16);
+            border-color: rgba(96,165,250,0.3);
+        }
+
+        .sim-step.done {
+            color: #86efac;
+        }
+
+        .station-list-header {
+            padding: 12px 24px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .station-list-header h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #475569;
+        }
+
+        .station-list-count {
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        #stationList {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 12px 12px;
+        }
+
+        #stationList::-webkit-scrollbar { width: 4px; }
+        #stationList::-webkit-scrollbar-track { background: transparent; }
+        #stationList::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+        .station-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+            border: 1px solid transparent;
+        }
+
+        .station-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        .station-item.highlighted {
+            background: rgba(96,165,250,0.1);
+            border-color: rgba(96,165,250,0.2);
+        }
+
+        .station-marker-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+
+        .station-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .station-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #cbd5e1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .station-coords {
+            font-size: 10.5px;
+            color: #475569;
+            font-family: 'SF Mono', 'Cascadia Code', monospace;
+            margin-top: 1px;
+        }
+
+        .station-line-tag {
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        /* Map */
+        #mapContainer {
+            flex: 1;
+            position: relative;
+        }
+
+        #map { width: 100%; height: 100%; }
+
+        /* Toggle sidebar button */
+        #toggleSidebar {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 1001;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(15,21,36,0.95);
+            color: #94a3b8;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s;
+            backdrop-filter: blur(8px);
+        }
+
+        #toggleSidebar:hover {
+            background: rgba(30,40,65,0.95);
+            color: #fff;
+        }
+
+        /* Custom Leaflet popup */
+        .leaflet-popup-content-wrapper {
+            background: rgba(15,21,36,0.95) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+            backdrop-filter: blur(12px) !important;
+            color: #e0e6ed !important;
+        }
+
+        .leaflet-popup-tip {
+            background: rgba(15,21,36,0.95) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+        }
+
+        .leaflet-popup-close-button {
+            color: #64748b !important;
+        }
+
+        .popup-content {
+            padding: 4px;
+            min-width: 200px;
+        }
+
+        .popup-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .popup-line {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .popup-coords {
+            font-family: 'SF Mono', 'Cascadia Code', monospace;
+            font-size: 11.5px;
+            color: #94a3b8;
+            background: rgba(255,255,255,0.04);
+            padding: 6px 8px;
+            border-radius: 6px;
+            line-height: 1.6;
+        }
+
+        .popup-coords span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .popup-model {
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.45;
+            color: #cbd5e1;
+            border-top: 1px dashed rgba(148,163,184,0.25);
+            padding-top: 8px;
+        }
+
+        /* Map legend */
+        .map-legend {
+            position: absolute;
+            bottom: 24px;
+            right: 16px;
+            z-index: 1000;
+            background: rgba(15,21,36,0.92);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            backdrop-filter: blur(12px);
+            min-width: 200px;
+        }
+
+        .map-legend h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 0;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .legend-line {
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                z-index: 2000;
+                width: 320px;
+                min-width: 320px;
+            }
+            #sidebar.collapsed {
+                transform: translateX(-320px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <h1>Duong Sat Viet Nam</h1>
+                <p>Ban do he thong duong sat quoc gia</p>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="num" id="totalStations">0</div>
+                    <div class="label">Nha Ga</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num" id="totalLines">7</div>
+                    <div class="label">Tuyen</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">2,600+</div>
+                    <div class="label">km</div>
+                </div>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="searchInput" placeholder="Tim kiem ga...">
+            </div>
+            <div class="line-filters" id="lineFilters">
+                <h3>Cac tuyen duong sat</h3>
+            </div>
+            <div class="simulator-box">
+                <div class="sim-header">
+                    <div class="sim-title">Mo phong mau</div>
+                    <span class="sim-status" id="simStatus">Ready</span>
+                </div>
+                <div class="sim-summary" id="simSummary"></div>
+                <div class="sim-actions">
+                    <button class="sim-btn" id="simulateVinhBtn">Chay mo phong Ga Vinh</button>
+                    <button class="sim-btn" id="focusVinhBtn">Tim Ga Vinh</button>
+                </div>
+                <ul class="sim-steps" id="simSteps"></ul>
+            </div>
+            <div class="station-list-container">
+                <div class="station-list-header">
+                    <h3>Danh sach nha ga</h3>
+                    <span class="station-list-count" id="visibleCount"></span>
+                </div>
+                <div id="stationList"></div>
+            </div>
+        </div>
+        <div id="mapContainer">
+            <button id="toggleSidebar" title="Toggle sidebar">&#9776;</button>
+            <div id="map"></div>
+            <div class="map-legend" id="mapLegend">
+                <h4>Chu giai</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+    // ============================================================
+    // DATA: All Vietnam Railway Stations with GPS Coordinates
+    // Source: Wikidata + OpenStreetMap
+    // ============================================================
+    const LINES_CONFIG = {
+        "Thong Nhat (Bac-Nam)": { color: "#ef4444", label: "Thong Nhat (Bac-Nam)", weight: 3.5 },
+        "Ha Noi - Lao Cai": { color: "#f59e0b", label: "Ha Noi - Lao Cai", weight: 2.8 },
+        "Ha Noi - Hai Phong": { color: "#10b981", label: "Ha Noi - Hai Phong", weight: 2.8 },
+        "Ha Noi - Dong Dang": { color: "#8b5cf6", label: "Ha Noi - Dong Dang", weight: 2.8 },
+        "Ha Noi - Quan Trieu": { color: "#06b6d4", label: "Ha Noi - Quan Trieu", weight: 2.8 },
+        "Kep - Ha Long": { color: "#ec4899", label: "Kep - Ha Long", weight: 2.8 },
+        "Da Lat - Trai Mat": { color: "#84cc16", label: "Da Lat - Trai Mat", weight: 2.5 }
+    };
+
+    const RAILWAY_DATA = {
+        "Thong Nhat (Bac-Nam)": [
+            { name: "Ga Ha Noi", lat: 21.02417, lon: 105.84083 },
+            { name: "Ga Giap Bat", lat: 20.978611, lon: 105.84 },
+            { name: "Ga Van Dien", lat: 20.943889, lon: 105.843611 },
+            { name: "Ga Thuong Tin", lat: 20.869444, lon: 105.864722 },
+            { name: "Ga Cho Tia", lat: 20.801111, lon: 105.884722 },
+            { name: "Ga Van Diem", lat: 20.771111, lon: 105.901111 },
+            { name: "Ga Phu Xuyen", lat: 20.7375, lon: 105.913056 },
+            { name: "Ga Dong Van", lat: 20.638611, lon: 105.918889 },
+            { name: "Ga Phu Ly", lat: 20.540556, lon: 105.913056 },
+            { name: "Ga Thinh Chau", lat: 20.509774, lon: 105.894846 },
+            { name: "Ga Binh Luc", lat: 20.493056, lon: 105.997222 },
+            { name: "Ga Cau Ho", lat: 20.465833, lon: 106.049722 },
+            { name: "Ga Dang Xa", lat: 20.441667, lon: 106.118889 },
+            { name: "Ga Nam Dinh", lat: 20.42, lon: 106.16444 },
+            { name: "Ga Trinh Xuyen", lat: 20.370833, lon: 106.1325 },
+            { name: "Ga Nui Goi", lat: 20.331389, lon: 106.076944 },
+            { name: "Ga Cat Dang", lat: 20.295278, lon: 106.025 },
+            { name: "Ga Ninh Binh", lat: 20.241999, lon: 105.974856 },
+            { name: "Ga Cau Yen", lat: 20.203889, lon: 105.965556 },
+            { name: "Ga Ghenh", lat: 20.169167, lon: 105.941111 },
+            { name: "Ga Dong Giao", lat: 20.138611, lon: 105.870833 },
+            { name: "Ga Bim Son", lat: 20.081389, lon: 105.855278 },
+            { name: "Ga Do Len", lat: 19.987778, lon: 105.844444 },
+            { name: "Ga Nghia Trang", lat: 19.916111, lon: 105.813889 },
+            { name: "Ga Thanh Hoa", lat: 19.811667, lon: 105.766944 },
+            { name: "Ga Yen Thai", lat: 19.718333, lon: 105.707222 },
+            { name: "Ga Minh Khoi", lat: 19.632778, lon: 105.701944 },
+            { name: "Ga Thi Long", lat: 19.541667, lon: 105.71 },
+            { name: "Ga Van Trai", lat: 19.457778, lon: 105.763333 },
+            { name: "Ga Khoa Truong", lat: 19.375556, lon: 105.731944 },
+            { name: "Ga Truong Lam", lat: 19.315, lon: 105.72 },
+            { name: "Ga Hoang Mai", lat: 19.268333, lon: 105.696667 },
+            { name: "Ga Cau Giat", lat: 19.159204, lon: 105.626829 },
+            { name: "Ga Yen Ly", lat: 19.076667, lon: 105.585833 },
+            { name: "Ga Cho Sy", lat: 19.0075, lon: 105.575833 },
+            { name: "Ga My Ly", lat: 18.8975, lon: 105.601111 },
+            { name: "Ga Nghi Long", lat: 18.825429, lon: 105.658253 },
+            { name: "Ga Quan Hanh", lat: 18.784444, lon: 105.6475 },
+            { name: "Ga Vinh", lat: 18.68833, lon: 105.66444 },
+            { name: "Ga Yen Xuan", lat: 18.603889, lon: 105.62 },
+            { name: "Ga Yen Trung", lat: 18.523611, lon: 105.587778 },
+            { name: "Ga Duc Lac", lat: 18.482778, lon: 105.583056 },
+            { name: "Ga Yen Due", lat: 18.426944, lon: 105.566389 },
+            { name: "Ga Hoa Duyet", lat: 18.383889, lon: 105.601944 },
+            { name: "Ga Thanh Luyen", lat: 18.296389, lon: 105.636389 },
+            { name: "Ga Chu Le", lat: 18.223056, lon: 105.698333 },
+            { name: "Ga Huong Pho", lat: 18.169722, lon: 105.707778 },
+            { name: "Ga Phuc Trach", lat: 18.110833, lon: 105.769722 },
+            { name: "Ga La Khe", lat: 18.0625, lon: 105.826111 },
+            { name: "Ga Tan Ap", lat: 18.033611, lon: 105.854167 },
+            { name: "Ga Dong Chuoi", lat: 18.008056, lon: 105.903889 },
+            { name: "Ga Kim Lu", lat: 17.950278, lon: 105.961389 },
+            { name: "Ga Dong Le", lat: 17.887778, lon: 106.021944 },
+            { name: "Ga Ngoc Lam", lat: 17.828611, lon: 106.121111 },
+            { name: "Ga Lac Son", lat: 17.811389, lon: 106.188889 },
+            { name: "Ga Le Son", lat: 17.778333, lon: 106.258056 },
+            { name: "Ga Minh Le", lat: 17.712222, lon: 106.370278 },
+            { name: "Ga Ngan Son", lat: 17.67, lon: 106.394167 },
+            { name: "Ga Tho Loc", lat: 17.618889, lon: 106.458611 },
+            { name: "Ga Hoan Lao", lat: 17.575556, lon: 106.522222 },
+            { name: "Ga Phuc Tu", lat: 17.551667, lon: 106.542778 },
+            { name: "Ga Dong Hoi", lat: 17.469274, lon: 106.600106 },
+            { name: "Ga Le Ky", lat: 17.404722, lon: 106.608056 },
+            { name: "Ga Long Dai", lat: 17.318333, lon: 106.6275 },
+            { name: "Ga My Duc", lat: 17.238333, lon: 106.695833 },
+            { name: "Ga Phu Hoa", lat: 17.193056, lon: 106.748333 },
+            { name: "Ga My Trach", lat: 17.186667, lon: 106.805556 },
+            { name: "Ga Thuong Lam", lat: 17.152778, lon: 106.858333 },
+            { name: "Ga Sa Lung", lat: 17.058611, lon: 106.966111 },
+            { name: "Ga Tien An", lat: 16.977778, lon: 107.03 },
+            { name: "Ga Ha Thanh", lat: 16.908056, lon: 107.077222 },
+            { name: "Ga Dong Ha", lat: 16.811111, lon: 107.111667 },
+            { name: "Ga Quang Tri", lat: 16.737778, lon: 107.186944 },
+            { name: "Ga Dien Sanh", lat: 16.687222, lon: 107.247222 },
+            { name: "Ga My Chanh", lat: 16.628056, lon: 107.305 },
+            { name: "Ga Pho Trach", lat: 16.584444, lon: 107.361667 },
+            { name: "Ga Hien Sy", lat: 16.529167, lon: 107.431944 },
+            { name: "Ga Van Xa", lat: 16.508333, lon: 107.503056 },
+            { name: "Ga Hue", lat: 16.4565, lon: 107.578 },
+            { name: "Ga An Cuu", lat: 16.452365, lon: 107.599628 },
+            { name: "Ga Huong Thuy", lat: 16.418056, lon: 107.664444 },
+            { name: "Ga Truoi", lat: 16.318889, lon: 107.774722 },
+            { name: "Ga Cau Hai", lat: 16.269722, lon: 107.886389 },
+            { name: "Ga Thua Luu", lat: 16.270833, lon: 107.994722 },
+            { name: "Ga Lang Co", lat: 16.222222, lon: 108.081111 },
+            { name: "Ga Hai Van Bac", lat: 16.211111, lon: 108.115833 },
+            { name: "Ga Hai Van", lat: 16.193778, lon: 108.151225 },
+            { name: "Ga Hai Van Nam", lat: 16.170278, lon: 108.136944 },
+            { name: "Ga Kim Lien", lat: 16.132222, lon: 108.120556 },
+            { name: "Ga Thanh Khe", lat: 16.066356, lon: 108.182378 },
+            { name: "Ga Da Nang", lat: 16.0716, lon: 108.2092 },
+            { name: "Ga Le Trach", lat: 15.970556, lon: 108.182778 },
+            { name: "Ga Nong Son", lat: 15.886667, lon: 108.186667 },
+            { name: "Ga Tra Kieu", lat: 15.809444, lon: 108.231111 },
+            { name: "Ga Phu Cang", lat: 15.704444, lon: 108.341389 },
+            { name: "Ga Tam Thanh", lat: 15.613438, lon: 108.418466 },
+            { name: "Ga An My", lat: 15.596389, lon: 108.4275 },
+            { name: "Ga Tam Ky", lat: 15.5575, lon: 108.482778 },
+            { name: "Ga Diem Pho", lat: 15.476111, lon: 108.586944 },
+            { name: "Ga Nui Thanh", lat: 15.421111, lon: 108.669722 },
+            { name: "Ga Tri Binh", lat: 15.348333, lon: 108.729444 },
+            { name: "Ga Binh Son", lat: 15.286944, lon: 108.758889 },
+            { name: "Ga Dai Loc", lat: 15.195, lon: 108.765833 },
+            { name: "Ga Quang Ngai", lat: 15.120778, lon: 108.781139 },
+            { name: "Ga Hoa Vinh Tay", lat: 15.022778, lon: 108.834167 },
+            { name: "Ga Mo Duc", lat: 14.954722, lon: 108.865278 },
+            { name: "Ga Thach Tru", lat: 14.880278, lon: 108.910278 },
+            { name: "Ga Duc Pho", lat: 14.809722, lon: 108.946389 },
+            { name: "Ga Thuy Trach", lat: 14.752592, lon: 109.006693 },
+            { name: "Ga Sa Huynh", lat: 14.661667, lon: 109.064722 },
+            { name: "Ga Tam Quan", lat: 14.547778, lon: 109.043611 },
+            { name: "Ga Bong Son", lat: 14.438333, lon: 109.019444 },
+            { name: "Ga Van Phu", lat: 14.313889, lon: 109.064167 },
+            { name: "Ga Phu My", lat: 14.184167, lon: 109.039722 },
+            { name: "Ga Khanh Phuoc", lat: 14.0875, lon: 109.037222 },
+            { name: "Ga Phu Cat", lat: 13.994722, lon: 109.056667 },
+            { name: "Ga Binh Dinh", lat: 13.887222, lon: 109.100833 },
+            { name: "Ga Dieu Tri", lat: 13.80722, lon: 109.14361 },
+            { name: "Ga Quy Nhon", lat: 13.778333, lon: 109.223333 },
+            { name: "Ga Tan Vinh", lat: 13.7075, lon: 109.049444 },
+            { name: "Ga Van Canh", lat: 13.620556, lon: 108.996944 },
+            { name: "Ga Phuoc Lanh", lat: 13.486111, lon: 109.030833 },
+            { name: "Ga La Hai", lat: 13.381667, lon: 109.105833 },
+            { name: "Ga Chi Thanh", lat: 13.304722, lon: 109.219444 },
+            { name: "Ga Hoa Da", lat: 13.205278, lon: 109.270278 },
+            { name: "Ga Tuy Hoa", lat: 13.0881, lon: 109.2973 },
+            { name: "Ga Dong Tac", lat: 13.055833, lon: 109.321944 },
+            { name: "Ga Phu Hiep", lat: 13.000278, lon: 109.361111 },
+            { name: "Ga Hao Son", lat: 12.908333, lon: 109.376667 },
+            { name: "Ga Dai Lanh", lat: 12.833889, lon: 109.360556 },
+            { name: "Ga Tu Bong", lat: 12.777778, lon: 109.300833 },
+            { name: "Ga Gia", lat: 12.7, lon: 109.223611 },
+            { name: "Ga Hoa Huynh", lat: 12.574444, lon: 109.168056 },
+            { name: "Ga Ninh Hoa", lat: 12.488889, lon: 109.122778 },
+            { name: "Ga Phong Thanh", lat: 12.433333, lon: 109.125833 },
+            { name: "Ga Luong Son", lat: 12.337778, lon: 109.194444 },
+            { name: "Ga Nha Trang", lat: 12.24833, lon: 109.18417 },
+            { name: "Ga Phu Vinh", lat: 12.254731, lon: 109.149922 },
+            { name: "Ga Cay Cay", lat: 12.216944, lon: 109.080278 },
+            { name: "Ga Hoa Tan", lat: 12.121389, lon: 109.098611 },
+            { name: "Ga Suoi Cat", lat: 12.0275, lon: 109.040278 },
+            { name: "Ga Nga Ba", lat: 11.925833, lon: 109.121111 },
+            { name: "Ga Cam Thinh Dong", lat: 11.825851, lon: 109.104754 },
+            { name: "Ga Ca Rom", lat: 11.779722, lon: 109.079167 },
+            { name: "Ga Phuoc Nhon", lat: 11.666389, lon: 108.993333 },
+            { name: "Ga Thap Cham", lat: 11.597222, lon: 108.95 },
+            { name: "Ga Hoa Trinh", lat: 11.499167, lon: 108.911389 },
+            { name: "Ga Ca Na", lat: 11.351944, lon: 108.876389 },
+            { name: "Ga Vinh Tan", lat: 11.325913, lon: 108.811285 },
+            { name: "Ga Vinh Hao", lat: 11.309444, lon: 108.741944 },
+            { name: "Ga Song Long Song", lat: 11.263611, lon: 108.673889 },
+            { name: "Ga Phong Phu", lat: 11.242376, lon: 108.607278 },
+            { name: "Ga Song Mao", lat: 11.248889, lon: 108.506667 },
+            { name: "Ga Chau Hanh", lat: 11.227778, lon: 108.425 },
+            { name: "Ga Song Luy", lat: 11.214722, lon: 108.3225 },
+            { name: "Ga Long Thanh", lat: 11.128889, lon: 108.204722 },
+            { name: "Ga Ma Lam", lat: 11.0725, lon: 108.131667 },
+            { name: "Ga Ham Liem", lat: 11.027299, lon: 108.067145 },
+            { name: "Ga Phan Thiet", lat: 10.9418, lon: 108.0824 },
+            { name: "Ga Binh Thuan", lat: 10.96861, lon: 108.00306 },
+            { name: "Ga Ham Cuong Tay", lat: 10.930978, lon: 107.943372 },
+            { name: "Ga Suoi Van", lat: 10.920556, lon: 107.867222 },
+            { name: "Ga Song Phan", lat: 10.874444, lon: 107.751667 },
+            { name: "Ga Song Dinh", lat: 10.921389, lon: 107.672778 },
+            { name: "Ga Suoi Kiet", lat: 10.968333, lon: 107.630278 },
+            { name: "Ga Gia Huynh", lat: 10.985278, lon: 107.541389 },
+            { name: "Ga Tran Tao", lat: 10.9675, lon: 107.488056 },
+            { name: "Ga Gia Ray", lat: 10.964167, lon: 107.403056 },
+            { name: "Ga Bao Chanh", lat: 10.9525, lon: 107.325833 },
+            { name: "Ga Long Khanh", lat: 10.933333, lon: 107.245833 },
+            { name: "Ga Dau Giay", lat: 10.930833, lon: 107.137778 },
+            { name: "Ga Trung Hoa", lat: 10.933636, lon: 107.062865 },
+            { name: "Ga Trang Bom", lat: 10.944722, lon: 106.993889 },
+            { name: "Ga Ho Nai", lat: 10.959444, lon: 106.906111 },
+            { name: "Ga Bien Hoa", lat: 10.95083, lon: 106.82639 },
+            { name: "Ga Di An", lat: 10.907778, lon: 106.769167 },
+            { name: "Ga Song Than", lat: 10.883056, lon: 106.753333 },
+            { name: "Ga Binh Trieu", lat: 10.827311, lon: 106.71596 },
+            { name: "Ga Go Vap", lat: 10.815845, lon: 106.684681 },
+            { name: "Ga Sai Gon", lat: 10.78222, lon: 106.67722 }
+        ],
+        "Ha Noi - Lao Cai": [
+            { name: "Ga Ha Noi", lat: 21.02417, lon: 105.84083 },
+            { name: "Ga Long Bien", lat: 21.039722, lon: 105.850278 },
+            { name: "Ga Gia Lam", lat: 21.0525, lon: 105.88111 },
+            { name: "Ga Yen Vien", lat: 21.086944, lon: 105.9175 },
+            { name: "Ga Dong Anh", lat: 21.153056, lon: 105.851944 },
+            { name: "Ga Bac Hong", lat: 21.171667, lon: 105.799722 },
+            { name: "Ga Phuc Yen", lat: 21.240278, lon: 105.711667 },
+            { name: "Ga Thach Loi", lat: 21.200556, lon: 105.75 },
+            { name: "Ga Huong Canh", lat: 21.281111, lon: 105.646944 },
+            { name: "Ga Vinh Yen", lat: 21.308889, lon: 105.601944 },
+            { name: "Ga Huong Lai", lat: 21.291667, lon: 105.519167 },
+            { name: "Ga Bach Hac", lat: 21.290278, lon: 105.464722 },
+            { name: "Ga Viet Tri", lat: 21.300556, lon: 105.431667 },
+            { name: "Ga Phu Duc", lat: 21.338889, lon: 105.365833 },
+            { name: "Ga Tien Kien", lat: 21.366944, lon: 105.291944 },
+            { name: "Ga Phu Tho", lat: 21.402222, lon: 105.224167 },
+            { name: "Ga Chi Chu", lat: 21.429722, lon: 105.153056 },
+            { name: "Ga Vu En", lat: 21.4875, lon: 105.085833 },
+            { name: "Ga Am Thuong", lat: 21.560278, lon: 105.005556 },
+            { name: "Ga Doan Thuong", lat: 21.619722, lon: 104.950278 },
+            { name: "Ga Van Phu", lat: 21.678333, lon: 104.926944 },
+            { name: "Ga Co Phuc", lat: 21.760833, lon: 104.830556 },
+            { name: "Ga Yen Bai", lat: 21.7022, lon: 104.8806 },
+            { name: "Ga Ngoi Hop", lat: 21.822222, lon: 104.755 },
+            { name: "Ga Mau A", lat: 21.8775, lon: 104.694444 },
+            { name: "Ga Mau Dong", lat: 21.933611, lon: 104.636944 },
+            { name: "Ga Trai Hut", lat: 21.972222, lon: 104.591667 },
+            { name: "Ga Lam Giang", lat: 22.048333, lon: 104.496667 },
+            { name: "Ga Lang Khay", lat: 22.068889, lon: 104.475833 },
+            { name: "Ga Lang Thip", lat: 22.120833, lon: 104.414444 },
+            { name: "Ga Bao Ha", lat: 22.178611, lon: 104.355 },
+            { name: "Ga Thai Van", lat: 22.234444, lon: 104.284722 },
+            { name: "Ga Lang", lat: 22.367778, lon: 104.135 },
+            { name: "Ga Thai Nien", lat: 22.399722, lon: 104.085833 },
+            { name: "Ga Lang Giang", lat: 22.428889, lon: 104.046389 },
+            { name: "Ga Cau Nho", lat: 22.279722, lon: 104.245556 },
+            { name: "Ga Pho Lu", lat: 22.315, lon: 104.187222 },
+            { name: "Ga Lao Cai", lat: 22.4925, lon: 103.978333 }
+        ],
+        "Ha Noi - Hai Phong": [
+            { name: "Ga Ha Noi", lat: 21.02417, lon: 105.84083 },
+            { name: "Ga Long Bien", lat: 21.039722, lon: 105.850278 },
+            { name: "Ga Gia Lam", lat: 21.0525, lon: 105.88111 },
+            { name: "Ga Cau Bay", lat: 21.028611, lon: 105.917222 },
+            { name: "Ga Phu Thuy", lat: 21.003611, lon: 105.961944 },
+            { name: "Ga Lac Dao", lat: 20.983056, lon: 106.030278 },
+            { name: "Ga Tuan Luong", lat: 20.970556, lon: 106.100278 },
+            { name: "Ga Cam Giang", lat: 20.965833, lon: 106.173056 },
+            { name: "Ga Hai Duong", lat: 20.94778, lon: 106.32972 },
+            { name: "Ga Cao Xa", lat: 20.944722, lon: 106.272222 },
+            { name: "Ga Tien Trung", lat: 20.9675, lon: 106.378611 },
+            { name: "Ga Lai Khe", lat: 20.977778, lon: 106.413611 },
+            { name: "Ga Pham Xa", lat: 20.968889, lon: 106.452222 },
+            { name: "Ga Phu Thai", lat: 20.965556, lon: 106.511389 },
+            { name: "Ga Du Nghia", lat: 20.915278, lon: 106.564444 },
+            { name: "Ga Vat Cach", lat: 20.884722, lon: 106.605 },
+            { name: "Ga Thuong Ly", lat: 20.865278, lon: 106.658056 },
+            { name: "Ga Hai Phong", lat: 20.85611, lon: 106.6875 }
+        ],
+        "Ha Noi - Dong Dang": [
+            { name: "Ga Ha Noi", lat: 21.02417, lon: 105.84083 },
+            { name: "Ga Long Bien", lat: 21.039722, lon: 105.850278 },
+            { name: "Ga Gia Lam", lat: 21.0525, lon: 105.88111 },
+            { name: "Ga Yen Vien", lat: 21.086944, lon: 105.9175 },
+            { name: "Ga Co Loa", lat: 21.133056, lon: 105.873056 },
+            { name: "Ga Dong Anh", lat: 21.153056, lon: 105.851944 },
+            { name: "Ga Tu Son", lat: 21.120278, lon: 105.9625 },
+            { name: "Ga Lim", lat: 21.146667, lon: 106.019444 },
+            { name: "Ga Bac Ninh", lat: 21.178333, lon: 106.055833 },
+            { name: "Ga Thi Cau", lat: 21.195, lon: 106.081111 },
+            { name: "Ga Bac Giang", lat: 21.278889, lon: 106.191389 },
+            { name: "Ga Bao Son", lat: 21.36968, lon: 106.317417 },
+            { name: "Ga Kep", lat: 21.41694, lon: 106.29111 },
+            { name: "Ga Sen Ho", lat: 21.2525, lon: 106.104722 },
+            { name: "Ga Cam Ly", lat: 21.215833, lon: 106.380556 },
+            { name: "Ga Chi Linh", lat: 21.154167, lon: 106.446111 },
+            { name: "Ga Pho Trang", lat: 21.33917, lon: 106.25361 },
+            { name: "Ga Bac Le", lat: 21.516111, lon: 106.431389 },
+            { name: "Ga Pho Vi", lat: 21.473333, lon: 106.378333 },
+            { name: "Ga Voi Xo", lat: 21.438611, lon: 106.338056 },
+            { name: "Ga Chi Lang", lat: 21.601389, lon: 106.534722 },
+            { name: "Ga Song Hoa", lat: 21.556111, lon: 106.489722 },
+            { name: "Ga Dong Mo", lat: 21.651389, lon: 106.576944 },
+            { name: "Ga Bac Thuy", lat: 21.713611, lon: 106.665 },
+            { name: "Ga Ban Thi", lat: 21.766944, lon: 106.733611 },
+            { name: "Ga Yen Trach", lat: 21.809722, lon: 106.761944 },
+            { name: "Ga Lang Son", lat: 21.856389, lon: 106.768611 },
+            { name: "Ga Dong Dang", lat: 21.9439, lon: 106.697 }
+        ],
+        "Ha Noi - Quan Trieu": [
+            { name: "Ga Ha Noi", lat: 21.02417, lon: 105.84083 },
+            { name: "Ga Long Bien", lat: 21.039722, lon: 105.850278 },
+            { name: "Ga Gia Lam", lat: 21.0525, lon: 105.88111 },
+            { name: "Ga Yen Vien", lat: 21.086944, lon: 105.9175 },
+            { name: "Ga Dong Anh", lat: 21.153056, lon: 105.851944 },
+            { name: "Ga Trung Gia", lat: 21.315278, lon: 105.871389 },
+            { name: "Ga Pho Yen", lat: 21.411111, lon: 105.876944 },
+            { name: "Ga Dai Tu", lat: 21.651394, lon: 105.616808 },
+            { name: "Ga Luu Xa", lat: 21.562222, lon: 105.847222 },
+            { name: "Ga Thai Nguyen", lat: 21.586778, lon: 105.823653 },
+            { name: "Ga Quan Trieu", lat: 21.603889, lon: 105.801944 }
+        ],
+        "Kep - Ha Long": [
+            { name: "Ga Kep", lat: 21.41694, lon: 106.29111 },
+            { name: "Ga Lan Mau", lat: 21.290278, lon: 106.3375 },
+            { name: "Ga Mao Khe", lat: 21.0625, lon: 106.604722 },
+            { name: "Ga Dong Trieu", lat: 21.094722, lon: 106.533056 },
+            { name: "Ga Uong Bi", lat: 21.034722, lon: 106.755556 },
+            { name: "Ga Yen Duong", lat: 21.045556, lon: 106.700833 },
+            { name: "Ga Ban Co", lat: 21.032222, lon: 106.7775 },
+            { name: "Ga Yen Cu", lat: 20.982778, lon: 106.914444 },
+            { name: "Ga Ha Long", lat: 20.974444, lon: 107.010833 },
+            { name: "Ga Cai Lan", lat: 20.971667, lon: 107.040278 }
+        ],
+        "Da Lat - Trai Mat": [
+            { name: "Ga Da Lat", lat: 11.942, lon: 108.455 },
+            { name: "Ga Trai Mat", lat: 11.946111, lon: 108.501389 }
+        ]
+    };
+
+    // Additional unclassified stations
+    const EXTRA_STATIONS = [
+        { name: "Ga Da Phuc", lat: 21.232778, lon: 105.860833, line: "Khac" },
+        { name: "Ga Na Duong", lat: 21.701111, lon: 106.958611, line: "Khac" },
+        { name: "Ga Tan Lien", lat: 21.81286, lon: 106.82548, line: "Khac" },
+        { name: "Ga Khuc Rong", lat: 21.580278, lon: 105.926944, line: "Khac" },
+        { name: "Ga Kim No", lat: 21.142664, lon: 105.790158, line: "Khac" },
+        { name: "Ga Phu Dien", lat: 21.051492, lon: 105.764667, line: "Khac" },
+        { name: "Ga Ha Dong", lat: 20.952867, lon: 105.760328, line: "Khac" },
+        { name: "Ga Hop Tien", lat: 21.571667, lon: 106.016667, line: "Khac" },
+        { name: "Ga Luong Son (TN)", lat: 21.490851, lon: 105.877687, line: "Khac" }
+    ];
+
+    // Scenario model embedded from station operation document (3 GA YEN LY 2018)
+    const STATION_MODELS = {
+        "Ga Vinh": {
+            source: "3 GA YEN LY 2018",
+            summary: "Mau mo phong nghiep vu ga. Rule chinh: dung don tau >= 15 phut, dung don truoc gui tau >= 5 phut, cu ly ham 800m, canh gioi duong ngang khi can.",
+            steps: [
+                "Nhan thong tin tau den va xac dinh huong den ga.",
+                "TBCT ra lenh chuan bi duong don tau truoc it nhat 15 phut.",
+                "Gac ghi kiem tra duong thanh thoat va bao da san sang.",
+                "Mo tin hieu vao ga, cho tau vao duong don da chon.",
+                "Xac nhan tau vao ga nguyen ven, dong bo lai trang thai.",
+                "Truoc khi gui tau tiep theo, dinh chi don tau toi thieu 5 phut."
+            ],
+            popupNote: "Model demo: dung don >= 15p, dung gui >= 5p, cu ly ham 800m."
+        }
+    };
+
+    // ============================================================
+    // MAP INITIALIZATION
+    // ============================================================
+    const map = L.map('map', {
+        center: [16.5, 107.0],
+        zoom: 6,
+        zoomControl: false,
+        attributionControl: true
+    });
+
+    L.control.zoom({ position: 'topright' }).addTo(map);
+
+    // Dark tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    // ============================================================
+    // RENDER FUNCTIONS
+    // ============================================================
+    const allMarkers = [];
+    const allPolylines = [];
+    const lineGroups = {};
+    let activeLines = new Set(Object.keys(LINES_CONFIG));
+
+    function createStationIcon(color, size = 6) {
+        return L.divIcon({
+            className: 'custom-marker',
+            html: `<div style="
+                width: ${size}px;
+                height: ${size}px;
+                background: ${color};
+                border: 2px solid rgba(255,255,255,0.7);
+                border-radius: 50%;
+                box-shadow: 0 0 8px ${color}80, 0 0 16px ${color}40;
+            "></div>`,
+            iconSize: [size + 4, size + 4],
+            iconAnchor: [(size + 4) / 2, (size + 4) / 2]
+        });
+    }
+
+    function createMajorStationIcon(color) {
+        return L.divIcon({
+            className: 'custom-marker',
+            html: `<div style="
+                width: 12px;
+                height: 12px;
+                background: ${color};
+                border: 2.5px solid #fff;
+                border-radius: 50%;
+                box-shadow: 0 0 12px ${color}90, 0 0 24px ${color}50;
+            "></div>`,
+            iconSize: [17, 17],
+            iconAnchor: [8.5, 8.5]
+        });
+    }
+
+    const MAJOR_STATIONS = new Set([
+        'Ga Ha Noi', 'Ga Sai Gon', 'Ga Da Nang', 'Ga Hue', 'Ga Nha Trang',
+        'Ga Vinh', 'Ga Thanh Hoa', 'Ga Dong Hoi', 'Ga Quy Nhon', 'Ga Ninh Binh',
+        'Ga Hai Phong', 'Ga Lao Cai', 'Ga Dong Dang', 'Ga Lang Son', 'Ga Thai Nguyen',
+        'Ga Ha Long', 'Ga Nam Dinh', 'Ga Phu Ly', 'Ga Tam Ky', 'Ga Quang Ngai',
+        'Ga Dieu Tri', 'Ga Tuy Hoa', 'Ga Thap Cham', 'Ga Phan Thiet', 'Ga Bien Hoa',
+        'Ga Dong Ha', 'Ga Da Lat', 'Ga Yen Bai', 'Ga Viet Tri', 'Ga Bac Giang',
+        'Ga Bac Ninh', 'Ga Hai Duong', 'Ga Quang Tri'
+    ]);
+
+    function popupContent(station, lineName, color) {
+        const stationModel = STATION_MODELS[station.name];
+        const modelHtml = stationModel
+            ? `<div class="popup-model"><strong>Model:</strong> ${stationModel.popupNote}<br><strong>Nguon:</strong> ${stationModel.source}</div>`
+            : '';
+        return `
+            <div class="popup-content">
+                <div class="popup-name" style="color: ${color}">${station.name}</div>
+                <div class="popup-line" style="background: ${color}20; color: ${color}; border: 1px solid ${color}40;">${lineName}</div>
+                <div class="popup-coords">
+                    <div><span>Lat:</span> ${station.lat.toFixed(6)}°N</div>
+                    <div><span>Lon:</span> ${station.lon.toFixed(6)}°E</div>
+                </div>
+                ${modelHtml}
+            </div>
+        `;
+    }
+
+    // Render all lines
+    let totalStationCount = 0;
+    const stationListData = [];
+
+    let simulationTimer = null;
+
+    function setSimulationStatus(text) {
+        const el = document.getElementById('simStatus');
+        if (el) el.textContent = text;
+    }
+
+    function renderSimulationSteps(steps, activeIndex = -1) {
+        const listEl = document.getElementById('simSteps');
+        if (!listEl) return;
+        listEl.innerHTML = '';
+        steps.forEach((step, idx) => {
+            const li = document.createElement('li');
+            li.className = 'sim-step';
+            if (idx === activeIndex) li.classList.add('active');
+            if (idx < activeIndex) li.classList.add('done');
+            li.textContent = `T${idx + 1}: ${step}`;
+            listEl.appendChild(li);
+        });
+    }
+
+    function focusStationByName(name) {
+        const station = stationListData.find(s => s.name === name);
+        if (!station) return;
+        map.setView([station.lat, station.lon], 14, { animate: true });
+        station.marker.openPopup();
+    }
+
+    function runGaVinhSimulation() {
+        const model = STATION_MODELS['Ga Vinh'];
+        if (!model) return;
+
+        if (simulationTimer) {
+            clearInterval(simulationTimer);
+            simulationTimer = null;
+        }
+
+        focusStationByName('Ga Vinh');
+        renderSimulationSteps(model.steps, -1);
+        setSimulationStatus('Running');
+
+        let idx = -1;
+        simulationTimer = setInterval(() => {
+            idx += 1;
+            if (idx >= model.steps.length) {
+                clearInterval(simulationTimer);
+                simulationTimer = null;
+                setSimulationStatus('Done');
+                renderSimulationSteps(model.steps, model.steps.length);
+                return;
+            }
+            renderSimulationSteps(model.steps, idx);
+        }, 1500);
+    }
+
+    for (const [lineName, config] of Object.entries(LINES_CONFIG)) {
+        const stations = RAILWAY_DATA[lineName];
+        if (!stations) continue;
+
+        const group = L.layerGroup();
+        const coords = [];
+
+        stations.forEach(station => {
+            const isMajor = MAJOR_STATIONS.has(station.name);
+            const icon = isMajor ? createMajorStationIcon(config.color) : createStationIcon(config.color);
+            const marker = L.marker([station.lat, station.lon], { icon })
+                .bindPopup(popupContent(station, config.label, config.color), { maxWidth: 280 });
+
+            marker._stationData = station;
+            marker._lineName = lineName;
+            group.addLayer(marker);
+            allMarkers.push(marker);
+            coords.push([station.lat, station.lon]);
+
+            stationListData.push({
+                ...station,
+                line: lineName,
+                color: config.color,
+                isMajor,
+                marker
+            });
+        });
+
+        // Draw polyline
+        if (coords.length > 1) {
+            const polyline = L.polyline(coords, {
+                color: config.color,
+                weight: config.weight,
+                opacity: 0.7,
+                smoothFactor: 1.5,
+                lineCap: 'round',
+                lineJoin: 'round'
+            });
+            group.addLayer(polyline);
+            allPolylines.push(polyline);
+        }
+
+        group.addTo(map);
+        lineGroups[lineName] = group;
+        totalStationCount += stations.length;
+    }
+
+    // Add extra stations
+    EXTRA_STATIONS.forEach(station => {
+        const marker = L.marker([station.lat, station.lon], {
+            icon: createStationIcon('#94a3b8', 5)
+        }).bindPopup(popupContent(station, 'Tuyen khac', '#94a3b8'), { maxWidth: 280 });
+        marker._stationData = station;
+        marker._lineName = 'Khac';
+        marker.addTo(map);
+        allMarkers.push(marker);
+        stationListData.push({
+            ...station,
+            line: 'Khac',
+            color: '#94a3b8',
+            isMajor: false,
+            marker
+        });
+        totalStationCount += 1;
+    });
+
+    document.getElementById('totalStations').textContent = totalStationCount;
+
+    // ============================================================
+    // SIDEBAR UI
+    // ============================================================
+
+    // Toggle sidebar
+    document.getElementById('toggleSidebar').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.toggle('collapsed');
+        setTimeout(() => map.invalidateSize(), 350);
+    });
+
+    // Line filter buttons
+    const lineFiltersEl = document.getElementById('lineFilters');
+    for (const [lineName, config] of Object.entries(LINES_CONFIG)) {
+        const count = RAILWAY_DATA[lineName]?.length || 0;
+        const btn = document.createElement('button');
+        btn.className = 'line-btn active';
+        btn.innerHTML = `
+            <span class="line-dot" style="background: ${config.color}"></span>
+            <span>${config.label}</span>
+            <span class="line-count">${count}</span>
+        `;
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active');
+            if (activeLines.has(lineName)) {
+                activeLines.delete(lineName);
+                map.removeLayer(lineGroups[lineName]);
+            } else {
+                activeLines.add(lineName);
+                map.addLayer(lineGroups[lineName]);
+            }
+            renderStationList();
+        });
+        lineFiltersEl.appendChild(btn);
+    }
+
+    // Legend
+    const legendEl = document.getElementById('mapLegend');
+    for (const [lineName, config] of Object.entries(LINES_CONFIG)) {
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+            <span class="legend-line" style="background: ${config.color}"></span>
+            <span>${config.label}</span>
+        `;
+        legendEl.appendChild(item);
+    }
+
+    // Station list
+    function renderStationList(filter = '') {
+        const list = document.getElementById('stationList');
+        list.innerHTML = '';
+        const filterLower = filter.toLowerCase();
+
+        const filtered = stationListData.filter(s => {
+            const matchLine = activeLines.has(s.line) || s.line === 'Khac';
+            const matchSearch = !filter || s.name.toLowerCase().includes(filterLower);
+            return matchLine && matchSearch;
+        });
+
+        document.getElementById('visibleCount').textContent = `${filtered.length} ga`;
+
+        filtered.forEach(s => {
+            const item = document.createElement('div');
+            item.className = 'station-item';
+            const lineConfig = LINES_CONFIG[s.line] || { color: '#94a3b8', label: 'Khac' };
+            item.innerHTML = `
+                <span class="station-marker-icon" style="background: ${s.color}; ${s.isMajor ? 'width:10px;height:10px;border-width:2px;' : ''}"></span>
+                <div class="station-info">
+                    <div class="station-name">${s.name}</div>
+                    <div class="station-coords">${s.lat.toFixed(5)}°N, ${s.lon.toFixed(5)}°E</div>
+                </div>
+                <span class="station-line-tag" style="background: ${s.color}15; color: ${s.color}; border: 1px solid ${s.color}30;">
+                    ${(lineConfig.label || 'Khac').split(' ').slice(-1)[0]}
+                </span>
+            `;
+            item.addEventListener('click', () => {
+                map.setView([s.lat, s.lon], 14, { animate: true });
+                s.marker.openPopup();
+                document.querySelectorAll('.station-item.highlighted').forEach(el => el.classList.remove('highlighted'));
+                item.classList.add('highlighted');
+            });
+            list.appendChild(item);
+        });
+    }
+
+    renderStationList();
+
+    // Initialize simulation panel
+    const vinhModel = STATION_MODELS['Ga Vinh'];
+    if (vinhModel) {
+        document.getElementById('simSummary').textContent = `${vinhModel.summary} Nguon: ${vinhModel.source}.`;
+        renderSimulationSteps(vinhModel.steps, -1);
+    }
+
+    document.getElementById('simulateVinhBtn').addEventListener('click', runGaVinhSimulation);
+    document.getElementById('focusVinhBtn').addEventListener('click', () => {
+        focusStationByName('Ga Vinh');
+        setSimulationStatus('Focused');
+    });
+
+    // Search
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        renderStationList(e.target.value);
+    });
+
+    // ============================================================
+    // FIT BOUNDS
+    // ============================================================
+    const allCoords = stationListData.map(s => [s.lat, s.lon]);
+    if (allCoords.length) {
+        map.fitBounds(L.latLngBounds(allCoords).pad(0.05));
+    }
+    </script>
+</body>
+</html>

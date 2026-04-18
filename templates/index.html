@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Railway Kingdom - Flatland Web Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar - Configuration -->
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <h1>~ Enchanted Railway ~</h1>
+                <p class="subtitle">Kingdom of Flatland</p>
+            </div>
+            
+            <div class="config-section">
+                <h3><i class="icon">⚙</i> Basic Config</h3>
+                <div class="input-group">
+                    <label for="n_agents">Agents</label>
+                    <input type="number" id="n_agents" value="5" min="1" max="50">
+                </div>
+                <div class="input-group">
+                    <label for="x_dim">Width</label>
+                    <input type="number" id="x_dim" value="25" min="5" max="100">
+                </div>
+                <div class="input-group">
+                    <label for="y_dim">Height</label>
+                    <input type="number" id="y_dim" value="25" min="5" max="100">
+                </div>
+                <div class="input-group">
+                    <label for="n_cities">Cities</label>
+                    <input type="number" id="n_cities" value="3" min="2" max="10">
+                </div>
+                <div class="input-group">
+                    <label for="seed">Seed</label>
+                    <input type="number" id="seed" value="42">
+                </div>
+
+                <div class="collapsible">
+                    <h3 class="toggle-advanced"><i class="icon">▼</i> Advanced Config</h3>
+                    <div class="advanced-fields">
+                        <div class="input-group">
+                            <label>Malfunction Rate</label>
+                            <input type="number" id="malfunction_rate" value="0.005" step="0.001">
+                        </div>
+                        <div class="input-group">
+                            <label>Malfunction Min</label>
+                            <input type="number" id="malfunction_min" value="15">
+                        </div>
+                        <div class="input-group">
+                            <label>Malfunction Max</label>
+                            <input type="number" id="malfunction_max" value="50">
+                        </div>
+                        <div class="input-group">
+                            <label>Obs Depth</label>
+                            <input type="number" id="obs_tree_depth" value="2">
+                        </div>
+                        <div class="input-group">
+                            <label>Obs Path</label>
+                            <input type="number" id="obs_max_path_depth" value="30">
+                        </div>
+                        <div class="input-group">
+                            <label>Max Build Rails</label>
+                            <input type="number" id="max_rails_between_cities" value="2">
+                        </div>
+                        <div class="input-group">
+                            <label>Rails in City</label>
+                            <input type="number" id="max_rails_in_city" value="2">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-init" class="btn-primary">Generate Kingdom</button>
+            </div>
+
+            <div class="stats-section">
+                <h3><i class="icon">📊</i> Live Insight</h3>
+                <div class="stat-card">
+                    <span class="label">Step</span>
+                    <span id="stat-step" class="value">0 / 0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Completed</span>
+                    <span id="stat-completed" class="value">0 / 0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Success Rate</span>
+                    <span id="stat-success" class="value">0%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Total Reward</span>
+                    <span id="stat-reward" class="value">0.00</span>
+                </div>
+            </div>
+
+            <div class="model-info">
+                <p>Model: <strong>GNN PS-PPO (GAT)</strong></p>
+                <p>Status: <span id="model-status" class="status-badge">Ready</span></p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <div class="canvas-container" id="canvas-wrapper">
+                <canvas id="visualizer-canvas"></canvas>
+                <div id="loading-overlay" class="overlay hidden">
+                    <div class="spinner"></div>
+                    <p>Conjuring the Railway...</p>
+                </div>
+            </div>
+
+            <!-- Control Bar -->
+            <div class="control-bar glass">
+                <div class="playback-controls">
+                    <button id="btn-reset" title="Reset Episode"><i class="icon">↺</i></button>
+                    <button id="btn-play" class="btn-play" title="Play/Pause"><i class="icon" id="play-icon">▶</i></button>
+                    <button id="btn-step" title="Step Forward"><i class="icon">→</i></button>
+                </div>
+                
+                <div class="speed-controls">
+                    <label>Pace:</label>
+                    <input type="range" id="speed-slider" min="1" max="20" value="5">
+                    <span id="speed-value">5x</span>
+                </div>
+
+                <div class="view-controls">
+                    <label>View:</label>
+                    <select id="view-mode">
+                        <option value="fantasy">Web (Custom)</option>
+                        <option value="native">Flatland Output</option>
+                    </select>
+                </div>
+
+                <div class="camera-controls">
+                    <button id="btn-fit" title="Fit to Screen"><i class="icon">⛶</i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="{{ url_for('static', filename='js/visualizer.js') }}"></script>
+</body>
+</html>
