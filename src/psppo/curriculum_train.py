@@ -1,4 +1,4 @@
-from argparse import Namespace
+﻿from argparse import Namespace
 from datetime import datetime
 from flatland.envs.malfunction_generators import MalfunctionParameters
 from src.psppo.ps_ppo_flatland import train_multiple_agents
@@ -67,8 +67,8 @@ def curriculum_train():
     # ==========================================
     # Stage 1: 3 tàu, map 30x30
     # ==========================================
-    print("\n>>> STAGE 1: 3 trains, 30x30 map, 600 episodes")
-    env_s1 = {**base_env, "n_agents": 3, "x_dim": 30, "y_dim": 30, "n_cities": 3}
+    print("\n>>> STAGE 1: 2 trains, 30x30 map, 500 episodes")
+    env_s1 = {**base_env, "n_agents": 2, "x_dim": 30, "y_dim": 30, "n_cities": 2}
     train_s1 = {**base_training,
                 "n_episodes": 500,
                 "load_model_path": "",
@@ -81,8 +81,8 @@ def curriculum_train():
     # ==========================================
     # Stage 2: 5 tàu, map 40x40
     # ==========================================
-    print("\n>>> STAGE 2: 5 trains, 40x40 map, 600 episodes")
-    env_s2 = {**base_env, "n_agents": 5, "x_dim": 40, "y_dim": 40, "n_cities": 4}
+    print("\n>>> STAGE 2: 4 trains, 40x40 map, 500 episodes")
+    env_s2 = {**base_env, "n_agents": 4, "x_dim": 40, "y_dim": 40, "n_cities": 3}
     train_s2 = {**base_training,
                 "n_episodes": 500,
                 "load_model_path": "curriculum_stage1.pt",
@@ -127,53 +127,53 @@ def curriculum_train():
     # ==========================================
     # Stage 4: Robust — malfunction rate tăng lên 0.02
     # ==========================================
-    print("\n>>> STAGE 4 (ROBUST): 8 trains, 48x27 map, 500 episodes, malfunction_rate=0.02")
-    env_s4 = {**base_env,
-              "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
-              "malfunction_parameters": MalfunctionParameters(
-                  malfunction_rate=0.02,   # ← tăng từ 0.01 lên 0.02
-                  min_duration=15,
-                  max_duration=50),
-              "done_bonus": 1.0}           # ← tăng bonus để khuyến khích hoàn thành dù có sự cố
-    train_s4 = {**base_training,
-                "n_episodes": 500,
-                "load_model_path": "curriculum_stage3.pt",
-                "save_model_path": "curriculum_stage4_robust.pt",
-                "csv_log_path": "logs/csv/curriculum_stage4_robust_metrics.csv",
-                "wandb_tag": "curriculum-stage4-robust"}
-    train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
-    print(">>> Stage 4 done! Saved: curriculum_stage4_robust.pt")
-
+#     print("\n>>> STAGE 4 (ROBUST): 8 trains, 48x27 map, 500 episodes, malfunction_rate=0.02")
+#     env_s4 = {**base_env,
+#               "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
+#               "malfunction_parameters": MalfunctionParameters(
+#                   malfunction_rate=0.02,   # ← tăng từ 0.01 lên 0.02
+#                   min_duration=15,
+#                   max_duration=50),
+#               "done_bonus": 1.0}           # ← tăng bonus để khuyến khích hoàn thành dù có sự cố
+#     train_s4 = {**base_training,
+#                 "n_episodes": 500,
+#                 "load_model_path": "curriculum_stage3.pt",
+#                 "save_model_path": "curriculum_stage4_robust.pt",
+#                 "csv_log_path": "logs/csv/curriculum_stage4_robust_metrics.csv",
+#                 "wandb_tag": "curriculum-stage4-robust"}
+#     train_multiple_agents(Namespace(**env_s4), Namespace(**train_s4))
+#     print(">>> Stage 4 done! Saved: curriculum_stage4_robust.pt")
+# 
     # ==========================================
     # Stage 5: Fine-tuning - tăng done_bonus, giảm learning rate
     # ==========================================
-    print("\n>>> STAGE 5: Fine-tune 8 trains, 48x27, 500 episodes")
-    env_s5 = {**base_env,
-              "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
-              "malfunction_parameters": MalfunctionParameters(
-                  malfunction_rate=0.02,   # ← giữ nguyên rate từ stage 4
-                  min_duration=15,
-                  max_duration=50),
-              "deadlock_penalty": -10.0,
-              "done_bonus": 2.0}
-    train_s5 = {**base_training,
-                "n_episodes": 500,
+#     print("\n>>> STAGE 5: Fine-tune 8 trains, 48x27, 500 episodes")
+#     env_s5 = {**base_env,
+#               "n_agents": 8, "x_dim": 48, "y_dim": 27, "n_cities": 5,
+#               "malfunction_parameters": MalfunctionParameters(
+#                   malfunction_rate=0.02,   # ← giữ nguyên rate từ stage 4
+#                   min_duration=15,
+#                   max_duration=50),
+#               "deadlock_penalty": -10.0,
+#               "done_bonus": 2.0}
+#     train_s5 = {**base_training,
+#                 "n_episodes": 500,
                 # "learning_rate": 0.002,  # original (from base_training)
-                "learning_rate": 0.0005,   # ← giảm lr để fine-tune ổn định
+#                 "learning_rate": 0.0005,   # ← giảm lr để fine-tune ổn định
                 # "entropy_coefficient": 0.01,  # original (from base_training)
-                "entropy_coefficient": 0.005,  # ← giảm entropy để exploit nhiều hơn
-                "load_model_path": "curriculum_stage4_robust.pt",
-                "save_model_path": "curriculum_stage5.pt",
-                "csv_log_path": "logs/csv/curriculum_stage5_metrics.csv",
-                "wandb_tag": "curriculum-stage5"}
-    train_multiple_agents(Namespace(**env_s5), Namespace(**train_s5))
-    print(">>> Stage 5 done! Saved: curriculum_stage5.pt")
-
+#                 "entropy_coefficient": 0.005,  # ← giảm entropy để exploit nhiều hơn
+#                 "load_model_path": "curriculum_stage4_robust.pt",
+#                 "save_model_path": "curriculum_stage5.pt",
+#                 "csv_log_path": "logs/csv/curriculum_stage5_metrics.csv",
+#                 "wandb_tag": "curriculum-stage5"}
+#     train_multiple_agents(Namespace(**env_s5), Namespace(**train_s5))
+#     print(">>> Stage 5 done! Saved: curriculum_stage5.pt")
+# 
     # print("\n" + "=" * 60)
     # print("CURRICULUM TRAINING COMPLETE!")
     # print("Final model: curriculum_stage4.pt")
     # print("=" * 60)
-
+# 
     # ==========================================
     # Auto-save lên Google Drive
     # ==========================================
