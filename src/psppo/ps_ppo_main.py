@@ -1,4 +1,5 @@
 from argparse import Namespace
+import argparse
 from datetime import datetime
 
 from flatland.envs.malfunction_generators import MalfunctionParameters
@@ -8,6 +9,15 @@ from src.psppo.ps_ppo_flatland import train_multiple_agents
 
 
 def train():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--use_gnn', type=int, default=1, help="1 for True, 0 for False")
+    parser.add_argument('--action_masking', type=int, default=1, help="1 for True, 0 for False")
+    parser.add_argument('--n_episodes', type=int, default=2000)
+    args = parser.parse_args()
+
+    use_gnn_bool = bool(args.use_gnn)
+    action_masking_bool = bool(args.action_masking)
+
     seed = 14
 
     namefile = "psppo_" + datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
@@ -84,7 +94,7 @@ def train():
         # ============================
         # Training setup
         # ============================
-        "n_episodes": 2000,
+        "n_episodes": args.n_episodes,
         "horizon": 2048,
         "epochs": 8,
         # 64, 128, 256
@@ -127,13 +137,13 @@ def train():
         # ============================
         # Action Masking / Skipping
         # ============================
-        "action_masking": True,
+        "action_masking": action_masking_bool,
         "allow_no_op": False,
 
         # ============================
         # Contribution 2: GNN settings
         # ============================
-        "use_gnn": True,          # True = dùng GNN, False = dùng MLP gốc
+        "use_gnn": use_gnn_bool,          # True = dùng GNN, False = dùng MLP gốc
         "gnn_hidden_dim": 128,    # Hidden dimension của GAT
         "gnn_heads": 4,           # Số attention heads
         "gnn_layers": 2,          # Số GAT layers
